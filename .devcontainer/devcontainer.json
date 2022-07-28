@@ -23,7 +23,8 @@
 				"christian-kohler.path-intellisense",
 				"ChakrounAnas.turbo-console-log",
 				"WakaTime.vscode-wakatime",
-				"cipchk.cssrem"
+				"cipchk.cssrem",
+				"syler.sass-indented"
 			]
 		}
 	},

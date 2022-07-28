@@ -1,7 +1,17 @@
 {
   "name": "base-html-final",
+  "description": "Дипломный проект по базовому HTML",
+  "author": {
+    "name": "Thr0TT1e",
+    "email": "info@noble24.pro"
+  },
+  "homepage": "https://codeberg.org/Thr0TT1e/base-html-final",
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/Thr0TT1e/base-html-final"
+  },
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,5 +21,9 @@
   "devDependencies": {
     "sass": "^1.54.0",
     "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.5",
+    "bootstrap": "^5.2.0"
   }
 }
