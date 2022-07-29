@@ -24,7 +24,8 @@
 				"ChakrounAnas.turbo-console-log",
 				"WakaTime.vscode-wakatime",
 				"cipchk.cssrem",
-				"syler.sass-indented"
+				"syler.sass-indented",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
