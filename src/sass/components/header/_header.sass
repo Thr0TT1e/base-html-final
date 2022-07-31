@@ -1,0 +1,61 @@
+// .header
+  // .container
+
+.header__menuTop
+  padding-top: 30px
+  padding-bottom: 30px
+  background-color: #000
+
+.header__menuBottom
+  background-color: $menuBottom
+
+.header a
+  color: #fff
+
+.header__logIn
+  display: flex
+  justify-content: flex-end
+  position: relative
+  padding-top: 8px
+  padding-bottom: 8px
+
+.header__link::before
+  content: ""
+  position: absolute
+  background-image: url("./image/header/login.svg")
+  background-repeat: no-repeat
+  top: 15px
+  bottom: 0
+  left: 30px
+  right: 0
+  text-align: rigth
+
+.header__menuBottom
+  padding-top: 23px
+  padding-bottom: 23px
+  .nav-link:first-child
+    padding-left: 0
+
+.header__search
+  display: flex
+  justify-content: flex-end
+  align-self: center
+
+.header__btnSearch
+  width: 22px
+  height: 22px
+  margin-top: 8px
+  border: none
+  background-color: transparent
+  background-image: url("./image/header/search.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  background-size: contain
+
+.header__inputSearch
+  width: 218px
+  border: none
+  border-bottom: 1px solid rgba(255, 255, 255, .85)
+  background-color: transparent
+  font-size: 1.125rem
+  color: rgba(255, 255, 255, .85)
