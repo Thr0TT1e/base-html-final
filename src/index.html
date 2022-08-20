@@ -290,39 +290,49 @@
       <section class="gallery">
         <div class="container">
           <div class="row">
-            <div class="gallery__left">
+            <div class="gallery__left col-4">
               <div class="row">
-                <h2 class="header-base__h2-white">Галерея</h2>
+                <h2 class="header-base__h2 header-base__h2-white">Галерея</h2>
               </div>
 
               <div class="row">
-                <label for="filter"></label>
-                <select name="" id="filter">
-                  <option value="Painting">Живопись</option>
+                <!-- <label for="filter"></label> -->
+                <select name="" id="filter" class="gallery__select">
+                  <option value="Painting" class="gallery__option">
+                    Живопись
+                  </option>
+                  <option value="Picture" class="gallery__option">
+                    Рисунок
+                  </option>
+                  <option value="Sculpture" class="gallery__option">
+                    Скульптура
+                  </option>
                 </select>
               </div>
 
-              <div class="row">
+              <div class="row gallery__cb">
                 <label for="XIX">
                   <input type="checkbox" name="" id="XIX" />XIX век
                 </label>
+
                 <label for="XX">
                   <input type="checkbox" name="" id="XX" />XX век
                 </label>
+
                 <label for="Modernity">
                   <input type="checkbox" name="" id="Modernity" />Современность
                 </label>
               </div>
             </div>
 
-            <div class="gallery__rigth">
-              <div class="row">
+            <div class="gallery__rigth col-7">
+              <div class="row gallery__slideBtn">
                 <button></button>
                 <div class="gallery__pages">1 / 2</div>
                 <button></button>
               </div>
 
-              <div class="row">
+              <div class="row gallery__picture">
                 <div class="gallery__img">
                   <img
                     src="./image/gallery/pic-1.jpg"
@@ -331,6 +341,7 @@
                   />
                   <div class="gallery__bg"></div>
                 </div>
+
                 <div class="gallery__img">
                   <img
                     src="./image/gallery/pic-2.jpg"
@@ -339,6 +350,7 @@
                   />
                   <div class="gallery__bg"></div>
                 </div>
+
                 <div class="gallery__img">
                   <img
                     src="./image/gallery/pic-3.jpg"

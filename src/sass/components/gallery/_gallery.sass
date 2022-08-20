@@ -1,0 +1,45 @@
+.gallery
+  height: 595px
+  padding-top: 80px
+  padding-bottom: 80px
+  background-image: url(./image/gallery/bg.jpg)
+  background-repeat: no-repeat
+  background-position: 0 0
+  color: $white
+  .container
+    height: 100%
+
+.gallery__left
+  display: grid
+  grid-template-rows: auto auto 1fr
+  margin-right: 50px
+
+.gallery__select
+  height: 40px
+  // appearance: none
+  // -moz-appearance: none
+  // -webkit-appearance: none
+  border: 1px solid $white
+  border-radius: 6px
+  background: none
+  color: $white
+
+.gallery__option
+  border: 1px solid $white
+  border-radius: 6px
+
+.gallery__cb
+  gap: 20px
+  align-content: end
+  input
+    margin-right: 12px
+
+.gallery__picture
+  display: grid
+  grid-template-columns: repeat(3, auto)
+
+.gallery__slideBtn
+  display: grid
+  grid-template-columns: 30px max-content 30px
+  grid-template-rows: 30px
+  margin-bottom: 30px
