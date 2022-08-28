@@ -4,8 +4,10 @@
 
 ---
 
+![Образец](./Blanchard_1920.png)
+
 [Для качественного выполнения проекта постоянно проверяйте себя по чек-листу](https://docs.google.com/spreadsheets/d/1n8Vo5FohT0SEATJMDnt7sTd4_2eJxjzXoUi0w23m0os/edit#gid=0)
 
 [Макет Blanchard](https://www.figma.com/file/FXCdg8Pu72IM1Zs2NV6iwJ/Blanchard?node-id=26%3A2)
 
-[Макет W-Wave Radio](https://www.figma.com/file/uSeXndmGD8R4F8kSZxZo40/Landing_4-(W-Wave-Radio))
+[Макет W-Wave Radio](<https://www.figma.com/file/uSeXndmGD8R4F8kSZxZo40/Landing_4-(W-Wave-Radio)>)
