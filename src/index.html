@@ -951,13 +951,13 @@
       </section>
 
       <section class="projects">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <h2 class="header-base__h2">Проекты</h2>
           </div>
 
           <div class="row">
-            <p>
+            <p class="projects__desc col-8">
               Предварительные выводы: постоянное информационно-пропагандистское
               обеспечение нашей деятельности однозначно фиксирует необходимость
               своевременного выполнения сверхзадачи. А ещё независимые
@@ -982,107 +982,88 @@
           <div class="row">
             <h3 class="header-base__h3">Партнёры проектов:</h3>
 
-            <div
-              id="carouselProjects"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                  <img
-                    src="./image/projects/freelands.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img
-                    src="./image/projects/institute.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/workhouse.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/1849.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/hiscox.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/camden.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/stassen.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/watts.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-
-                <div class="carousel-item">
-                  <img
-                    src="./image/projects/esad.png"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselProjects"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+            <div class="projects__slide">
+              <button class="projects__btn projects__prev" type="button">
+                <i class="bi bi-chevron-left"></i>
                 <span class="visually-hidden">Предыдущий</span>
               </button>
 
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselProjects"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+              <div class="projects__carousel">
+                <div class="projects__pic">
+                  <img
+                    src="./image/projects/freelands.png"
+                    class="projects__image"
+                    alt="..."
+                  />
+                </div>
+
+                <div class="projects__pic">
+                  <img
+                    src="./image/projects/institute.png"
+                    class="projects__image"
+                    alt="..."
+                  />
+                </div>
+
+                <div class="projects__pic">
+                  <img
+                    src="./image/projects/workhouse.png"
+                    class="projects__image"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- <div class="projects__pic">
+                <img
+                  src="./image/projects/1849.png"
+                  class="projects__image"
+                  alt="..."
+                />
+              </div>
+
+              <div class="projects__pic">
+                <img
+                  src="./image/projects/hiscox.png"
+                  class="projects__image"
+                  alt="..."
+                />
+              </div>
+
+              <div class="projects__pic">
+                <img
+                  src="./image/projects/camden.png"
+                  class="projects__image"
+                  alt="..."
+                />
+              </div>
+
+              <div class="projects__pic">
+                <img
+                  src="./image/projects/stassen.png"
+                  class="projects__image"
+                  alt="..."
+                />
+              </div>
+
+              <div class="projects__pic">
+                <img
+                  src="./image/projects/watts.png"
+                  class="projects__image"
+                  alt="..."
+                />
+              </div>
+
+              <div class="projects__pic">
+                <img
+                  src="./image/projects/esad.png"
+                  class="projects__image"
+                  alt="..."
+                />
+              </div> -->
+              </div>
+
+              <button class="projects__btn projects__next" type="button">
+                <i class="bi bi-chevron-right"></i>
                 <span class="visually-hidden">Следующий</span>
               </button>
             </div>
