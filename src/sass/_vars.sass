@@ -9,3 +9,30 @@ $accordionGrey: rgba(202, 202, 202, 1)
 $accordionCircle: rgba(157, 92, 208, 1)
 $accordionCircleBg: rgba(209, 169, 240, 1)
 $btnSlide: rgba(236, 236, 236, 1)
+
+// Body Font Size
+$fontsize: 16px
+
+// System Font Family
+$openSans: "Open Sans"
+
+// Font
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    // font-display: swap // Uncomment to initially display system fonts
+    src: local($fname), url($furl) format('woff2')
+
+@include font('Open Sans', normal, 300, '../assets/fonts/OpenSans-Light.woff2')
+@include font('Open Sans', italic, 300, '../assets/fonts/OpenSans-LightItalic.woff2')
+@include font('Open Sans', italic, 400, '../assets/fonts/OpenSans-Italic.woff2')
+@include font('Open Sans', normal, 400, '../assets/fonts/OpenSans-Regular.woff2')
+@include font('Open Sans', normal, 600, '../assets/fonts/OpenSans-SemiBold.woff2')
+@include font('Open Sans', italic, 600, '../assets/fonts/OpenSans-SemiBoldItalic.woff2')
+@include font('Open Sans', normal, 700, '../assets/fonts/OpenSans-Bold.woff2')
+@include font('Open Sans', italic, 700, '../assets/fonts/OpenSans-BoldItalic.woff2')
+@include font('Open Sans', normal, 800, '../assets/fonts/OpenSans-ExtraBold.woff2')
+@include font('Open Sans', italic, 800, '../assets/fonts/OpenSans-ExtraBoldItalic.woff2')

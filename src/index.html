@@ -1072,23 +1072,28 @@
       </section>
 
       <section class="contacts">
-        <div class="container">
-          <div class="row">
-            <div class="col-2">
+        <div class="container-fluid">
+          <div class="contacts__block">
+            <div class="contacts__shop">
               <div class="contacts__name">Шоурум №4</div>
               <div class="contacts__address">
                 Леонтьевский переулок, дом 5/1
               </div>
             </div>
 
-            <div class="col-7">
-              <input type="text" />
-              <input type="text" />
-              <button>Заказать обратный звонок</button>
+            <div class="contacts__form">
+              <input class="contacts__input" type="text" placeholder="Имя*" />
+              <input
+                class="contacts__input"
+                type="text"
+                placeholder="Телефон*"
+              />
+              <button class="contacts__btn">Заказать обратный звонок</button>
             </div>
 
-            <div class="col-3">
+            <div class="">
               <div class="contacts__social">Связаться в один клик</div>
+
               <div class="contacts__icons">
                 <ul>
                   <li>
@@ -1105,9 +1110,11 @@
               </div>
             </div>
           </div>
-
-          <div class="row"></div>
         </div>
+      </section>
+
+      <section class="map">
+        <img src="./image/map/map.png" alt="Карта" />
       </section>
     </main>
 
