@@ -2,6 +2,9 @@ import path from 'node:path';
 
 export default {
   root: path.resolve(__dirname, 'src'),
+  build: {
+    outDir: '../dist'
+  },
   resolve: {
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
