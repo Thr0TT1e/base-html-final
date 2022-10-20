@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <!-- <base href="/"> -->
-    <title>Курсы 3D-моделирования</title>
+    <title>Blanchard</title>
     <meta name="description" content="" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -36,7 +36,11 @@
             <div class="header__menu col-9">
               <ul class="nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
+                  <a
+                    class="nav-link header__link-active"
+                    aria-current="page"
+                    href="#"
+                  >
                     О нас
                   </a>
                 </li>
@@ -70,169 +74,195 @@
         </div>
       </div>
 
-      <div class="header__menuBottom">
+      <nav class="navbar navbar-expand-lg bg-light header__menuBottom">
         <div class="container-fluid">
-          <div class="row">
-            <div class="header__menu2 col-9">
-              <ul class="nav">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
+          <div
+            class="col-9 collapse navbar-collapse header__menu2"
+            id="navbarSupportedContent"
+          >
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                >
+                  Реализм
+                </a>
+
+                <ul
+                  class="dropdown-menu header__dropdown header__dropdown-color"
+                >
+                  <li
+                    class="header__dropdown__li header__dropdown__li-tintoretto"
                   >
-                    Реализм
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">Тинторетто</a>
-                    </li>
+                    <a class="dropdown-item" href="#"> Тинторетто </a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Фридрих</a>
-                    </li>
+                  <li class="header__dropdown__li header__dropdown__li-fridrih">
+                    <a class="dropdown-item" href="#"> Фридрих </a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Леонардо</a>
-                    </li>
-
-                    <li>
-                      <a class="dropdown-item" href="#">Верроккьо</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
+                  <li
+                    class="header__dropdown__li header__dropdown__li-leonardo"
                   >
-                    Импрессионизм
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">Моне</a>
-                    </li>
+                    <a class="dropdown-item" href="#"> Леонардо </a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Сислей</a>
-                    </li>
+                  <li class="header__dropdown__li header__dropdown__li-verroku">
+                    <a class="dropdown-item" href="#"> Верроккьо </a>
+                  </li>
+                </ul>
+              </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Мане</a>
-                    </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                >
+                  Импрессионизм
+                </a>
+                <ul
+                  class="dropdown-menu header__dropdown header__dropdown-color"
+                >
+                  <li class="header__dropdown__li header__dropdown__li-mone">
+                    <a class="dropdown-item" href="#">Моне</a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Ренуар</a>
-                    </li>
-                  </ul>
-                </li>
+                  <li class="header__dropdown__li header__dropdown__li-sisley">
+                    <a class="dropdown-item" href="#">Сислей</a>
+                  </li>
 
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
+                  <li class="header__dropdown__li header__dropdown__li-mane">
+                    <a class="dropdown-item" href="#">Мане</a>
+                  </li>
+
+                  <li class="header__dropdown__li header__dropdown__li-renuar">
+                    <a class="dropdown-item" href="#">Ренуар</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                >
+                  Постимпрессионизм
+                </a>
+                <ul
+                  class="dropdown-menu header__dropdown header__dropdown-color"
+                >
+                  <li class="header__dropdown__li header__dropdown__li-vangog">
+                    <a class="dropdown-item" href="#">Ван Гог</a>
+                  </li>
+
+                  <li class="header__dropdown__li header__dropdown__li-sezan">
+                    <a class="dropdown-item" href="#">Сезанн</a>
+                  </li>
+
+                  <li class="header__dropdown__li header__dropdown__li-gogen">
+                    <a class="dropdown-item" href="#">Гоген</a>
+                  </li>
+
+                  <li class="header__dropdown__li header__dropdown__li-siora">
+                    <a class="dropdown-item" href="#">Сёра</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                >
+                  Авангард
+                </a>
+                <ul
+                  class="dropdown-menu header__dropdown header__dropdown-color"
+                >
+                  <li
+                    class="header__dropdown__li header__dropdown__li-kandinskiy"
                   >
-                    Постимпрессионизм
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">Ван Гог</a>
-                    </li>
+                    <a class="dropdown-item" href="#">Кандинский</a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Сезанн</a>
-                    </li>
-
-                    <li>
-                      <a class="dropdown-item" href="#">Гоген</a>
-                    </li>
-
-                    <li>
-                      <a class="dropdown-item" href="#">Сёра</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
+                  <li
+                    class="header__dropdown__li header__dropdown__li-marinetti"
                   >
-                    Авангард
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">Кандинский</a>
-                    </li>
+                    <a class="dropdown-item" href="#">Маринетти</a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Маринетти</a>
-                    </li>
-
-                    <li>
-                      <a class="dropdown-item" href="#">Малевич</a>
-                    </li>
-
-                    <li>
-                      <a class="dropdown-item" href="#">Пикассо</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
+                  <li
+                    class="header__dropdown__li header__dropdown__li-malevich"
                   >
-                    Футуризм
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">Карра</a>
-                    </li>
+                    <a class="dropdown-item" href="#">Малевич</a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Прателла</a>
-                    </li>
+                  <li class="header__dropdown__li header__dropdown__li-picasso">
+                    <a class="dropdown-item" href="#">Пикассо</a>
+                  </li>
+                </ul>
+              </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Северини</a>
-                    </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                >
+                  Футуризм
+                </a>
+                <ul
+                  class="dropdown-menu header__dropdown header__dropdown-color"
+                >
+                  <li class="header__dropdown__li header__dropdown__li-karra">
+                    <a class="dropdown-item" href="#">Карра</a>
+                  </li>
 
-                    <li>
-                      <a class="dropdown-item" href="#">Балла</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+                  <li
+                    class="header__dropdown__li header__dropdown__li-pratella"
+                  >
+                    <a class="dropdown-item" href="#">Прателла</a>
+                  </li>
 
-            <div class="header__search col-3">
-              <button class="header__btnSearch"></button>
-              <input
-                type="text"
-                class="header__inputSearch"
-                placeholder="Поиск по сайту"
-              />
-            </div>
+                  <li
+                    class="header__dropdown__li header__dropdown__li-severinni"
+                  >
+                    <a class="dropdown-item" href="#">Северини</a>
+                  </li>
+
+                  <li class="header__dropdown__li header__dropdown__li-balla">
+                    <a class="dropdown-item" href="#">Балла</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="header__search col-3">
+            <button class="header__btnSearch"></button>
+            <input
+              type="text"
+              class="header__inputSearch"
+              placeholder="Поиск по сайту"
+            />
           </div>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main>

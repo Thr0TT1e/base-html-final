@@ -25,7 +25,11 @@
 				"WakaTime.vscode-wakatime",
 				"cipchk.cssrem",
 				"syler.sass-indented",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"steoates.autoimport",
+				"kisstkondoros.vscode-gutter-preview",
+				"Gruntfuggly.todo-tree",
+				"naumovs.color-highlight"
 			]
 		}
 	},

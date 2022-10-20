@@ -15,9 +15,138 @@
 .header__menu
   .nav-item
     margin-right: 46px
+    font-weight: 600
+    font-size: 1.125rem
+    line-height: 25px
+
+.header__menu
+  .nav-link
+    padding-left: 6px
+    padding-right: 6px
+
+.header__menu
+  .nav-link:hover
+    color: $menuHover
+
+.header__menu
+  .nav-link:active
+    color: $menuClick
+
+.header__menu
+  .nav-link:focus,
+  .header__link-active
+    background-color: $accordionBorder
+    padding-left: 6px
+    padding-right: 6px
+    font-weight: 600
+    font-size: 1.125rem
+    line-height: 25px
+    color: #fff
 
 .header__menuBottom
-  background-color: $menuBottom
+  background-color: $menuBottom !important
+
+.header__dropdown
+  width: 300px
+  height: 300px
+  margin-top: 22px !important
+  padding: 40px
+  border-radius: 0
+
+.header__dropdown-color
+  background-color: $menuBottom !important
+
+.header__dropdown__li
+  height: 40px
+
+.header__dropdown__li:not(:nth-last-of-type(1))
+  margin-bottom: 20px
+
+// Реализм
+.header__dropdown__li-tintoretto
+  background-image: url('image/header/realism/tintoretto.png')
+
+.header__dropdown__li-fridrih
+  background-image: url('image/header/realism/fridrih.png')
+
+.header__dropdown__li-leonardo
+  background-image: url('image/header/realism/leonardo.png')
+
+.header__dropdown__li-verroku
+  background-image: url('image/header/realism/verroku.png')
+
+// Импрессионизм
+.header__dropdown__li-mone
+  background-image: url('image/header/impressionism/mone.png')
+
+.header__dropdown__li-sisley
+  background-image: url('image/header/impressionism/sisley.png')
+
+.header__dropdown__li-mane
+  background-image: url('image/header/impressionism/mane.png')
+
+.header__dropdown__li-renuar
+  background-image: url('image/header/impressionism/renuar.png')
+
+// Постимпрессионизм
+.header__dropdown__li-vangog
+  background-image: url('image/header/post-impressionism/van-gog.png')
+
+.header__dropdown__li-sezan
+  background-image: url('image/header/post-impressionism/sezan.png')
+
+.header__dropdown__li-gogen
+  background-image: url('image/header/post-impressionism/gogen.png')
+
+.header__dropdown__li-siora
+  background-image: url('image/header/post-impressionism/siora.png')
+
+// Авангард
+.header__dropdown__li-kandinskiy
+  background-image: url('image/header/avant-garde/kandinskiy.png')
+
+.header__dropdown__li-marinetti
+  background-image: url('image/header/avant-garde/marinetti.png')
+
+.header__dropdown__li-malevich
+  background-image: url('image/header/avant-garde/malevich.png')
+
+.header__dropdown__li-picasso
+  background-image: url('image/header/avant-garde/picasso.png')
+
+// Футуризм
+.header__dropdown__li-karra
+  background-image: url('image/header/futurism/karra.png')
+
+.header__dropdown__li-pratella
+  background-image: url('image/header/futurism/pratella.png')
+
+.header__dropdown__li-severinni
+  background-image: url('image/header/futurism/severinni.png')
+
+.header__dropdown__li-balla
+  background-image: url('image/header/futurism/balla.png')
+
+.header__dropdown__li
+  .dropdown-item
+    display: flex
+    align-items: center
+    height: 100%
+    padding: 0
+    padding-left: 14px
+    font-weight: 600
+    font-size: .875rem
+    line-height: 19px
+    color: #fff
+
+.header__dropdown__li
+  .dropdown-item:hover
+    background-color: transparent
+    outline: 2px solid $accordionCircle
+
+.header__dropdown__li
+  .dropdown-item:active
+    background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4))
 
 .header a
   color: #fff
@@ -28,17 +157,50 @@
   position: relative
   padding-top: 8px
   padding-bottom: 8px
+  .header__link
+    padding-bottom: 4px
+    padding-right: 6px
+    font-weight: 600
+    font-size: 1.125rem
+    line-height: 25px
+    color: #fff
+  .header__link::before
+    content: ""
+    position: absolute
+    background-color: #fff
+    -webkit-mask-image: url("./image/header/login.svg")
+    mask-image: url("./image/header/login.svg")
+    mask-repeat: no-repeat
+    top: 15px
+    bottom: 0
+    left: 44px
+    right: 0
+    text-align: rigth
+  .header__link:focus
+    background-color: $accordionBorder
+    padding-bottom: 4px
+    padding-left: 26px
+    padding-right: 6px
+    font-weight: 600
+    font-size: 1.125rem
+    line-height: 25px
+    color: #fff
 
-.header__link::before
-  content: ""
-  position: absolute
-  background-image: url("./image/header/login.svg")
-  background-repeat: no-repeat
-  top: 15px
-  bottom: 0
-  left: 30px
-  right: 0
-  text-align: rigth
+.header__logIn
+  .header__link:hover
+    color: $menuHover
+  .header__link:hover::before
+    background-color: $menuHover
+    -webkit-mask-image: url("./image/header/login.svg")
+    mask-image: url("./image/header/login.svg")
+
+.header__logIn
+  .header__link:active
+    color: $menuClick
+  .header__link:active::before
+    background-color: $menuClick
+    -webkit-mask-image: url("./image/header/login.svg")
+    mask-image: url("./image/header/login.svg")
 
 .header__menuBottom
   padding-top: 23px
@@ -47,8 +209,31 @@
     padding-left: 0
 
 .header__menu2
-  .nav-item
+  .nav-item:not(:nth-last-of-type(1))
     margin-right: 80px
+
+.header__menu2
+  .nav-item
+    padding-left: 6px
+    padding-right: 6px
+    font-weight: 400
+    font-size: 1.125rem
+    line-height: 25px
+
+.header__menu2
+  .nav-link:focus
+    padding-left: 6px
+    padding-right: 6px
+    background-color: $accordionBorder
+    color: #fff
+
+.header__menu2
+  .nav-link:hover
+    color: $menuHover !important
+
+.header__menu2
+  .nav-link:active
+    color: $menuClick !important
 
 .header__search
   display: flex
@@ -74,3 +259,10 @@
   background-color: transparent
   font-size: 1.125rem
   color: rgba(255, 255, 255, .85)
+
+.header__inputSearch:focus,
+.header__inputSearch:hover
+  border-bottom: 1px solid $menuHover
+
+.header__inputSearch:active
+  border-bottom: 1px solid $menuClick
