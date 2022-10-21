@@ -41,6 +41,104 @@
   input
     margin-right: 12px
 
+.gallery__input-checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+  &+label
+    display: inline-flex
+    align-items: center
+    user-select: none
+  &+label::before
+    content: ''
+    display: inline-block
+    margin-right: 12px
+    width: 12px
+    height: 12px
+    border: 1px solid $white
+    background-position: top 2.7px left 3px
+    background-repeat: no-repeat
+    background-size: 4px
+    transition: border-color .2s ease-in-out
+  &:checked+label::before
+    background-image: url('./image/gallery/checkbox-checked.svg')
+    border-color: #C283F3
+
+.gallery__input-checkbox:hover+label::before,
+.gallery__input-checkbox:focus+label::before
+  border-color: #C283F3
+
+.gallery__label-checkbox
+  font-weight: 400
+  font-size: 16px
+  color: $white
+  transition: color .2s ease-in-out
+  &:not(:last-child)
+    margin-bottom: 13px
+
+.gallery__input-checkbox:focus-visible+label,
+.gallery__label-checkbox:hover,
+.gallery__input-checkbox:checked+label
+  color: #C283F3
+
+.gallery__swiper-container
+  position: relative
+  padding-top: 25px
+  max-width: 1150px
+  overflow: hidden
+  flex-direction: column-reverse
+  justify-content: space-between
+
+.gallery__swiper-flex
+  display: flex
+
+.gallery__swiper-wrapper
+  width: 100%
+  height: 350px
+  box-sizing: content-box
+
+.gallery__slide-wrap
+  position: relative
+  max-width: 350px
+  &::after
+    content: url('./image/gallery/lupa.svg')
+    position: absolute
+    max-width: 300px
+    max-height: 300px
+    top: 25px
+    left: 25px
+    right: 25px
+    bottom: 25px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: rgba(0, 0, 0, 0.5)
+    opacity: 0
+    transition: all .2s linear
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    box-shadow: inset 25px 25px rgba(194, 131, 243, 0.4), inset -25px -25px rgba(194, 131, 243, 0.4)
+    opacity: 0
+    transition: all .2s linear
+  &:focus::before
+    box-shadow: inset 3px 3px $menuClick, inset -3px -3px $menuClick
+    opacity: 1
+
+.gallery__slide-wrap:hover::after,
+.gallery__slide-wrap:active::after,
+.gallery__slide-wrap:active::before
+  opacity: 1
+
+.gallery__slide-img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
 .gallery__picture
   display: grid
   grid-template-columns: repeat(3, 350px)

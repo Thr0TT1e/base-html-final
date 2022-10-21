@@ -55,30 +55,81 @@
     font-weight: 600
     line-height: 32px
 
-.card-header
-  border-top-width: 1px
-  border-top-style: solid
-  border-top-color: $accordionGrey
+.catalog__item-top
+  display: flex
+  border-top: 1px solid #cacaca
+  border-bottom: 1px solid #cacaca
+  transition: all 0.2s ease-in-out
 
-.card:first-child .card-header
-  border-bottom-width: 1px
-  border-bottom-style: solid
-  border-bottom-color: $accordionGrey
+.catalog__item:hover
+  position: relative
+  border-color: $accordionCircle
+  z-index: 1
 
-.card-header.catalog__border-active
-  border-top-width: 1px
-  border-top-style: solid
-  border-top-color: $accordionBorder
+.catalog__item-top
+  position: relative
+  width: 100%
+  padding-top: 33px
+  padding-bottom: 28px
+  justify-content: space-between
+  align-items: center
+  cursor: pointer
 
-.card:first-child .card-header.catalog__border-active
-  border-bottom-width: 1px
-  border-bottom-style: solid
-  border-bottom-color: $accordionBorder
+.catalog__item-title
+  font-weight: 600
+  font-size: 24px
+  line-height: 32px
+  transition: all .2s ease-in-out
 
-.card:last-child .card-header
-  border-bottom-width: 1px
-  border-bottom-style: solid
-  border-bottom-color: $accordionGrey
+.catalog__item-top:focus-within,
+.catalog__item-top:focus-within .catalog__item-button
+  outline: none
+
+.catalog__item-top:focus-within .catalog__item-title
+  background-color: $accordionCircle
+  color: $white
+
+.catalog__item-top:focus-within svg path,
+.catalog__item-top:hover svg path,
+.ui-accordion-header-active svg path
+  fill: $accordionCircleBg
+
+.catalog__item-top:focus-within svg .catalog__svg-focus,
+.catalog__item-top:hover:not(:active) svg .catalog__svg-focus
+  stroke: $accordionCircleBg
+
+.catalog__item-top:active svg .catalog__svg-focus
+  stroke: $accordionCircle
+  stroke-width: 2
+
+.catalog__item-top:hover
+  color: $accordionCircle
+  border-color: $accordionCircle
+
+.ui-accordion-header-active,
+.catalog__item-top:active
+  position: relative
+  color: $menuClick
+  border-color: $menuClick
+
+.ui-accordion-header-active svg
+  transform: rotate(180deg)
+
+.ui-accordion-header-active svg .catalog__svg-focus
+  stroke: $accordionCircle
+  stroke-width: 2
+
+.ui-accordion-header-icon
+  display: none
+
+.btn-reset
+  padding: 0
+  border: none
+  background: transparent
+  position: relative
+  cursor: pointer
+  transition-property: background-color, box-shadow
+  transition: .2s ease-in-out
 
 .card-body
   padding: 25px 0
@@ -86,9 +137,6 @@
 .catalog__list
   display: grid
   grid-template-columns: repeat(3, 1fr)
-
-.catalog__h2
-  position: relative
 
 .catalog__circle
   position: absolute
@@ -100,9 +148,3 @@
   border-radius: 50px
   border: 2px solid $accordionCircle
   background-color: $accordionCircleBg
-
-.catalog__circle-up::before
-  content: "\f286"
-
-.catalog__circle-down::before
-  content: "\F282"

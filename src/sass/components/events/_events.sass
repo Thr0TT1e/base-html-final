@@ -1,0 +1,53 @@
+
+.events__swiper-button-prev,
+.events__swiper-button-next
+    position: absolute
+    width: 50px
+    height: 50px
+
+.events__swiper-button-prev
+    top: 43%
+    left: -15px
+
+.events__swiper-button-next
+    top: 43%
+    right: -15px
+
+.events__swiper-button-prev svg,
+.events__swiper-button-next svg
+    width: 100%
+    height: 100%
+
+.events__swiper-button-prev::after,
+.events__swiper-button-next::after
+    content: ''
+
+.events__swiper-button-next.swiper-button-disabled,
+.events__swiper-button-prev.swiper-button-disabled
+    opacity: 0
+
+.events__swiper-button-prev:focus-visible:not(:hover):not(:active),
+.events__swiper-button-next:focus-visible:not(:hover):not(:active)
+    outline: none
+
+.events__swiper-button-prev:focus-visible:not(:hover):not(:active) svg .events__svg-focus,
+.events__swiper-button-next:focus-visible:not(:hover):not(:active) svg .events__svg-focus
+    outline: none
+    stroke: $accordionCircle
+
+.events__swiper-button-prev:hover svg path,
+.events__swiper-button-next:hover svg path,
+.events__swiper-button-prev:active svg path,
+.events__swiper-button-next:active svg path
+    fill: $accordionCircleBg
+
+.events__swiper-button-prev:hover:not(:active) svg .events__svg-focus,
+.events__swiper-button-next:hover:not(:active) svg .events__svg-focus
+    stroke: $accordionCircleBg
+
+.events__swiper-button-prev:active svg .events__svg-focus,
+.events__swiper-button-next:active svg .events__svg-focus
+    stroke: $accordionCircle
+
+    .events__swiper-pagination
+        display: none
