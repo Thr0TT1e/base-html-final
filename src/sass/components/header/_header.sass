@@ -12,6 +12,161 @@
   padding-bottom: 30px
   background-color: #000
 
+.header__blockBurger
+  display: none
+
+.header__burger
+  display: none
+  width: 36px
+  height: 28px
+
+.header__menu-mobile
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 768px
+  padding: 37px 50px 51px 50px
+  background-color: $menuBurgerBg
+  transition: transform .3s ease-in-out
+  transform: translateX(-110%)
+  z-index: 1000
+
+.header__burger--close
+  margin-bottom: 30px
+  transition: transform .2s ease-in
+  &:active
+    transform: rotate(90deg)
+
+.header__list-mobile
+  margin-bottom: auto
+  flex-direction: column
+
+.header__item-mobile
+  margin-bottom: 0
+
+.header__link
+  &:hover
+    outline: none
+    color: $menuHover
+  &:active
+    color: $menuClick
+
+.header__link-mobile
+  font-weight: 600
+  font-size: 24px
+  line-height: 64px
+  &:not(:last-child)
+    margin-bottom: 30px
+
+.header-bg-focus,
+.bg-focus
+  z-index: 3
+
+.header-bg-focus:before,
+.bg-focus:before
+  content: ""
+  position: absolute
+  top: -6px
+  bottom: -6px
+  left: -6px
+  right: -6px
+  background-color: $menuClick
+  z-index: -1
+  opacity: 0
+  transition: opacity .4s ease-in-out
+
+.bg-focus:before
+  background-color: $accordionCircle
+
+.header-bg-focus:focus-visible
+  outline: none
+
+.header-bg-focus:focus-visible:not(:hover):before,
+.bg-focus:focus-visible:not(:hover):before,
+.outline-focus:focus-visible:not(:hover):before
+  opacity: 1
+
+.btn-reset
+  padding: 0
+  border: none
+  background: transparent
+  position: relative
+  cursor: pointer
+  transition-property: background-color, box-shadow
+  transition: .2s ease-in-out
+
+.header__menu-button
+  width: 257px
+  height: 60px
+  border: 2px solid $accordionCircle !important
+  border-radius: 90px
+
+.header__button
+  padding-left: 25px
+  transition-property: background, color
+  transition-timing-function: linear
+  transition-duration: .2s
+  background-image: url(./image/header/login.svg)
+  background-size: 13px 13px
+  background-repeat: no-repeat
+  background-position: left 4.5px top 6px
+  color: $white
+  z-index: 2
+  &:hover
+    color: #C283F3
+    background-image: url(./image/header/login-hover.svg)
+    background-size: 17.5px 13px
+    background-position: left 0 top 6px
+    outline: none
+  &:active
+    color: $accordionCircle
+    background-image: url(./image/header/login-active.svg)
+    background-size: 17.5px 13px
+    background-position: left 0 top 6px
+
+.header__search-mobile--open
+  display: none
+  width: 29.45px
+  height: 28.82px
+
+.header__search-wrap
+  display: none
+  position: absolute
+  top: 35px
+  right: 49px
+  align-items: center
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration
+  display: none
+
+.header__search-mobile--open.search-active
+  opacity: 0
+
+.form__active
+  transform: translate(0, -50%)
+  opacity: 1
+  visibility: visible
+
+.header__search-wrap.search-active
+  display: flex
+
+.header__form-btn
+  margin-right: 10px
+  width: 22.1px
+  height: 21.61px
+
+.header__search-btn--size
+  width: 29px
+  height: 29px
+
+.header__search-input
+  margin-right: 24px
+
 .header__menu
   .nav-item
     margin-right: 46px
@@ -266,3 +421,34 @@
 
 .header__inputSearch:active
   border-bottom: 1px solid $menuClick
+
+@media (max-width: 1420px)
+  .header__menuTop
+    position: relative
+
+  .header__blockBurger
+    display: block
+
+  .header__burger
+    display: block
+    margin-right: auto
+    cursor: pointer
+
+  .header__menu-mobile
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+
+  .header__menu-mobile.is-active-burger
+    transform: none
+
+  .header__menu,
+  .header__logIn
+    display: none
+
+  .header__search-mobile--open
+    display: block
+
+  .header__menuBottom
+    display: none

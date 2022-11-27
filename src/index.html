@@ -25,7 +25,111 @@
       <div class="header__menuTop">
         <div class="container-fluid">
           <div class="row">
-            <div class="header__logo col-2">
+            <div class="header__blockBurger col-1">
+              <div id="burger" class="header__burger">
+                <svg
+                  width="36"
+                  height="29"
+                  viewBox="0 0 36 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="36"
+                    height="3.65217"
+                    transform="matrix(-1 0 0 1 36 0.700012)"
+                    fill="white"
+                  />
+                  <path
+                    d="M28.2002 12.8739H0.00019455V16.5261H28.2002V12.8739Z"
+                    fill="white"
+                  />
+                  <path d="M24 25.0479H0V28.7H24V25.0479Z" fill="white" />
+                </svg>
+              </div>
+
+              <div class="header__menu-mobile" id="mobile-menu">
+                <button
+                  class="header__burger--close btn-reset"
+                  id="burger--close"
+                  aria-label="Закрыть меню"
+                >
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="2.63623"
+                      width="37.2838"
+                      height="3.72838"
+                      transform="rotate(45 2.63623 0)"
+                      fill="white"
+                    />
+                    <rect
+                      y="26.3636"
+                      width="37.2838"
+                      height="3.72838"
+                      transform="rotate(-45 0 26.3636)"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+
+                <ul class="header__list-mobile list-reset flex">
+                  <li class="header__item-mobile">
+                    <a
+                      href="#about"
+                      class="header__link header__link-mobile link header-bg-focus"
+                      >О&nbsp;нас</a
+                    >
+                  </li>
+                  <li class="header__item-mobile">
+                    <a
+                      href="#gallery"
+                      class="header__link header__link-mobile link header-bg-focus"
+                      >Галерея</a
+                    >
+                  </li>
+                  <li class="header__item-mobile">
+                    <a
+                      href="#catalog"
+                      class="header__link header__link-mobile link header-bg-focus"
+                      >Каталог</a
+                    >
+                  </li>
+                  <li class="header__item-mobile">
+                    <a
+                      href="#events"
+                      class="header__link header__link-mobile link header-bg-focus"
+                      >События</a
+                    >
+                  </li>
+                  <li class="header__item-mobile">
+                    <a
+                      href="#projects"
+                      class="header__link header__link-mobile link header-bg-focus"
+                      >Проекты</a
+                    >
+                  </li>
+                  <li class="header__item-mobile">
+                    <a
+                      href="#contacts"
+                      class="header__link header__link-mobile link header-bg-focus"
+                      >Контакты</a
+                    >
+                  </li>
+                </ul>
+
+                <button class="header__menu-button btn-reset">
+                  <span class="header__button">Войти</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="header__logo text-center col-10 col-xl-2">
               <img
                 src="./image/header/logo.svg"
                 alt="Логотип"
@@ -69,6 +173,103 @@
 
             <div class="header__logIn col-1">
               <a href="#" class="header__link">Войти</a>
+            </div>
+
+            <div class="col-1">
+              <button
+                class="header__search-mobile--open btn-reset"
+                aria-label="Найти"
+                id="search-btn"
+              >
+                <svg
+                  width="30"
+                  height="29"
+                  viewBox="0 0 30 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="9.15446"
+                    height="2.28862"
+                    transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)"
+                    fill="white"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+
+              <div class="header__search-wrap" id="search-open">
+                <form
+                  action="https://jsonplaceholder.typicode.com/posts"
+                  method="post"
+                  class="header__form-mobile flex"
+                >
+                  <button
+                    type="submit"
+                    class="header__form-btn header__search-btn--size btn-reset"
+                  >
+                    <svg
+                      width="30"
+                      height="29"
+                      viewBox="0 0 30 29"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="9.15446"
+                        height="2.28862"
+                        transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)"
+                        fill="white"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+
+                  <input
+                    class="header__search header__search-input"
+                    type="search"
+                    name="search"
+                    autocomplete="off"
+                  />
+                </form>
+
+                <button
+                  class="header__search-mobile--close header__search-btn--size btn-reset"
+                  aria-label="Закрыть окно поиска"
+                  id="search-close"
+                >
+                  <svg
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="29.567"
+                      height="2.9567"
+                      transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.09326 0)"
+                      fill="white"
+                    />
+                    <rect
+                      width="29.567"
+                      height="2.9567"
+                      transform="matrix(0.707093 -0.707121 0.707093 0.707121 0 20.9075)"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
