@@ -27,6 +27,18 @@
   img
     height: 60px
 
+.projects__pic:focus-within,
+.projects__pic:active
+  border-color: $accordionCircle
+
+.projects__pic:hover .projects__image,
+.projects__pic:active .projects__image
+  filter: grayscale(0) opacity(1)
+
+.projects__image
+  filter: grayscale(1) opacity(0.4)
+  transition: all .2s ease-in-out
+
 .projects__btn
   align-self: center
   width: 30px

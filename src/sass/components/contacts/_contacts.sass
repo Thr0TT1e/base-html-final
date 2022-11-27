@@ -32,6 +32,10 @@
   border-radius: 100px
   color: $dateFoto
 
+.contacts__input:focus,
+.contacts__input:hover
+  background-color: #eaeaea
+
 .contacts__btn
   width: 329px
   height: 50px
@@ -43,6 +47,16 @@
   font-size: 1.125rem
   line-height: 25px
   color: $btnHero
+
+.contacts__btn:hover
+  color: $white
+  background-color: $accordionCircle
+
+.contacts__btn:active
+  box-shadow: inset 0 0 0 3px $accordionCircleBg
+  border: none
+  color: $white
+  background-color: $menuClick
 
 .contacts__social
   margin-bottom: 6px
@@ -61,3 +75,11 @@
     li
       width: 40px
       height: 40px
+
+.contacts__svg:hover:not(:active)
+  opacity: .6
+
+.contacts__svg:active
+  img
+    border-radius: 20px
+    outline: 1px solid $socialIcons
