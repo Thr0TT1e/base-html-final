@@ -9,43 +9,93 @@
   a
     color: $btnHero
 
-.projects__slide
-  display: grid
-  grid-template-columns: 30px auto 1.875rem
-  grid-template-rows: 150px
-  grid-column-gap: 45px
+.projects__swiper
+  position: relative
 
-.projects__carousel
-  display: grid
-  grid-template-columns: repeat(3, 450px)
-  grid-column-gap: 50px
+.projects__swiper-container
+  position: relative
+  margin: 0 75px
+  max-width: 1450px
+  overflow: hidden
 
-.projects__pic
-  display: grid
-  place-content: center
+.projects__swiper-wrapper
+  width: 100%
+  height: 100%
+  box-sizing: border-box
+
+.projects__swiper-slide
+  position: relative !important
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 150px !important
   border: 1px solid $accordionGrey
-  img
-    height: 60px
+  transition: all .2s ease-in-out
 
-.projects__pic:focus-within,
-.projects__pic:active
+.projects__swiper-slide:focus-within,
+.projects__swiper-slide:active
   border-color: $accordionCircle
 
-.projects__pic:hover .projects__image,
-.projects__pic:active .projects__image
+.projects__swiper-link
+  display: grid
+  place-content: center
+  & > img
+    width: 100%
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.projects__swiper-slide:hover .projects__swiper-img,
+.projects__swiper-slide:active .projects__swiper-img
   filter: grayscale(0) opacity(1)
 
-.projects__image
+.projects__swiper-img
   filter: grayscale(1) opacity(0.4)
   transition: all .2s ease-in-out
 
 .projects__btn
-  align-self: center
+  position: absolute
   width: 30px
   height: 30px
-  border: none
-  border-radius: 50px
-  background-color: $btnSlide
+  top: 82px
+
+.projects__prev
+  left: 0
+  &::after
+    content: ''
+  &:focus
+    outline: none
+
+.projects__next
+  right: 0
+  &::after
+    content: ''
+  &:focus
+    outline: none
+
+.projects__prev:focus-visible svg .projects__swiper-button--focus,
+.projects__next:focus-visible svg .projects__swiper-button--focus,
+.projects__prev:active svg .projects__swiper-button--focus,
+.projects__next:active svg .projects__swiper-button--focus
+  stroke: $accordionCircle
+
+.projects__prev:hover svg path,
+.projects__next:hover svg path,
+.projects__prev:active svg path,
+.projects__next:active svg path
+  fill: $accordionCircleBg
+
+// .projects__btn
+//   align-self: center
+//   width: 30px
+//   height: 30px
+//   border: none
+//   border-radius: 50px
+//   background-color: $btnSlide
 
 .projects__descr-link
   text-decoration: none
@@ -59,3 +109,7 @@
   &:active
     color: $menuClick
     border-bottom: 1px solid $menuClick
+
+@media (max-width: 1420px)
+  .projects__swiper-container
+    margin: 0 53px

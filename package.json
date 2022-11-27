@@ -25,6 +25,8 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2"
+    "bootstrap-icons": "^1.10.2",
+    "swiper": "^8.4.5",
+    "ymaps": "^0.2.1"
   }
 }

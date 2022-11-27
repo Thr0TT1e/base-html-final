@@ -134,7 +134,7 @@
 .card-body
   padding: 25px 0
 
-.catalog__list
+.catalog__column
   display: grid
   grid-template-columns: repeat(3, 1fr)
 
@@ -148,3 +148,13 @@
   border-radius: 50px
   border: 2px solid $accordionCircle
   background-color: $accordionCircleBg
+
+@media (max-width: 1420px)
+  .catalog__left
+    min-width: 437px
+
+  .catalog__rigth
+    min-width: 437px
+
+  .catalog__column
+    grid-template-columns: repeat(2, 1fr)
