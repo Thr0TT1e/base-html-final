@@ -1,15 +1,13 @@
-import * as bootstrapIcons from 'bootstrap-icons/font/bootstrap-icons.css';
+import * as bootstrapIcons from 'bootstrap-icons/font/bootstrap-icons.css?inline';
 import '../sass/main.sass';
 import * as bootstrap from 'bootstrap';
+import Choices from 'choices.js';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import ymaps from 'ymaps';
 
 document.addEventListener('DOMContentLoaded', function () {
-  // header
-
-  // burger
-
+  // header - burger
   const openBurgerMenuHandler = () => {
     document.querySelector('#mobile-menu').classList.add('is-active-burger');
     document.querySelector('html').style.overflow = 'hidden';
@@ -43,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // search
-
   const openSearchHandler = () => {
     document.querySelector('#search-open').classList.toggle('search-active');
     document.querySelector('#search-btn').classList.toggle('search-active');
@@ -57,6 +54,46 @@ document.addEventListener('DOMContentLoaded', function () {
     .addEventListener('click', function () {
       openSearchHandler();
     });
+
+  // gallery - select
+  const choiceGallery = new Choices('#gallery__select', {
+    searchEnabled: false,
+    position: 'bottom',
+  });
+  console.log('🚀 ~ file: main.js:63 ~ choiceGallery', choiceGallery);
+
+  // swiper
+  const swiper = new Swiper('.gallery__swiper-container', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    // spaceBetween: 50,
+    loop: false,
+    navigation: {
+      nextEl: '.gallery__swiper-button-next',
+      prevEl: '.gallery__swiper-button-prev',
+    },
+    pagination: {
+      el: '.gallery__swiper-pagination',
+      type: 'fraction',
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+        spaceBetween: 38,
+        slidesPerGroup: 2,
+      },
+      1008: {
+        slidesPerView: 2,
+        spaceBetween: 34,
+        slidesPerGroup: 2,
+      },
+      1760: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+        slidesPerGroup: 3,
+      },
+    },
+  });
 
   const swiperProjects = new Swiper('.projects__swiper-container', {
     slidesPerView: 1,

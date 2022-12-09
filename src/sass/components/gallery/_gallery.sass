@@ -1,45 +1,124 @@
 .gallery
-  height: 595px
-  margin-bottom: 80px
+  background-image: url(image/gallery/bg_1920.png)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+
+.gallery__container
   padding-top: 80px
   padding-bottom: 80px
-  background-image: url(./image/gallery/bg.jpg)
-  background-repeat: no-repeat
-  background-position: 0 0
+
+.gallery__title
+  margin-bottom: 22px
   color: $white
-  .container-fluid
-    height: 100%
 
-.gallery__h2
-  margin-right: 40px
+.gallery__content-left
+  max-width: 400px
+  margin-right: 50px
 
-.gallery__left
-  display: grid
-  grid-template-rows: auto 1fr
-  margin-right: 40px
+.gallery__text
+  margin-bottom: 17px
+  font-weight: 600
+  font-size: 16px
+  color: $white
 
-.gallery__filter
-  margin-bottom: 10px
-
-.gallery__select
+.choices
+  margin-bottom: 185px
+  width: 400px
   height: 40px
-  // appearance: none
-  // -moz-appearance: none
-  // -webkit-appearance: none
+  background: inherit
+  border-radius: 6px
+  border: 1px solid $white
+  &:focus:not(:hover):not(:active)
+    background-color: rgba(255, 255, 255, 0.2)
+
+.choices:hover,
+.choices:active
+  background-color: rgba(255, 255, 255, 0.2)
+
+.choices__inner
+  position: relative
+  width: 100%
+  min-height: 40px
+  padding: 10px 15px
+  font-size: 16px
+  border: none
+  background: inherit
+  color: $white
+  opacity: 1
+  z-index: 5
+
+.choices__list--dropdown,
+.choices__list[aria-expanded]
+  padding: 0
+  margin-top: 1px
+  width: 400px
+  height: 80px
+  z-index: 2
+  background: inherit
   border: 1px solid $white
   border-radius: 6px
-  background: none
+
+.choices[data-type*=select-one]::after
+  content: url(image/gallery/header-arrow.svg)
+  right: 25px
+  top: 12px
+  border: none
+  z-index: 11
+
+.choices[data-type*=select-one].is-open::after
+  content: url(image/gallery/arrow-open.svg)
+  margin-top: -2px
+
+.choices__placeholder
+  opacity: 1
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded]
+  border: 1px solid #999
+
+.is-focused .choices__inner,
+.is-open .choices__inner
+  border-color: $white
+
+.choices__list--dropdown .choices__placeholder
+  display: none
+
+.choices__list--single
+  padding: 0
+
+.choices__list--single .choices__item
   color: $white
 
-.gallery__option
-  border: 1px solid $white
-  border-radius: 6px
+.choices__list--dropdown .choices__list,
+.choices__list[aria-expanded] .choices__list
+  padding: 0
 
-.gallery__cb
-  gap: 20px
-  align-content: end
-  input
-    margin-right: 12px
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item
+  margin: 0
+  padding: 14px 20px
+  height: 40px
+  border-bottom: 1px solid #999
+
+.choices__item
+  font-weight: 400
+  font-size: 16px
+  color: #999
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted
+  border: none
+  color: $white
+  background-color: rgba(255, 255, 255, 0.2)
+
+.choices__list--dropdown .choices__item--selectable::after,
+.choices__list[aria-expanded] .choices__item--selectable::after
+  content: ''
+
+.gallery__checkboxes
+  max-width: 150px
+  flex-direction: column
 
 .gallery__input-checkbox
   position: absolute
@@ -61,7 +140,7 @@
     background-size: 4px
     transition: border-color .2s ease-in-out
   &:checked+label::before
-    background-image: url('./image/gallery/checkbox-checked.svg')
+    background-image: url(image/gallery/checkbox-checked.svg)
     border-color: #C283F3
 
 .gallery__input-checkbox:hover+label::before,
@@ -89,19 +168,19 @@
   flex-direction: column-reverse
   justify-content: space-between
 
-.gallery__swiper-flex
-  display: flex
-
 .gallery__swiper-wrapper
   width: 100%
   height: 350px
   box-sizing: content-box
 
+.swiper-notification
+  display: none
+
 .gallery__slide-wrap
   position: relative
   max-width: 350px
   &::after
-    content: url('./image/gallery/lupa.svg')
+    content: url(image/gallery/lupa.svg)
     position: absolute
     max-width: 300px
     max-height: 300px
@@ -134,49 +213,145 @@
 .gallery__slide-wrap:active::before
   opacity: 1
 
-.gallery__picture
-  display: grid
-  grid-template-columns: repeat(3, 350px)
-  grid-gap: 50px
-
 .gallery__slide-img
   width: 100%
   height: 100%
   object-fit: cover
 
-.gallery__slideBtn
-  display: grid
-  grid-template-columns: 30px max-content 30px
-  grid-template-rows: 30px
-  align-content: center
-  button
-    border: none
-    border-radius: 50px
-    background: $btnGallery
-    i
-      color: #fff
+.gallery__btn-wrap
+  position: relative
+  width: 130px
+  height: 30px
+  margin-bottom: 30px
+  justify-content: space-between
 
-.gallery__pages
-  margin: 0 15px
-  line-height: 200%
+.gallery__swiper-button-next,
+.gallery__swiper-button-prev
+  position: relative !important
+  width: 30px
+  height: 30px
+  top: 5px
+
+.gallery__swiper-button-prev
+  left: 3px
+
+.gallery__swiper-button-next
+  right: -3px
+
+.gallery__swiper-pagination
+  position: absolute
+  left: 50px !important
+  bottom: 2px !important
+  width: 47px !important
+  height: 23px
+  margin-right: 11px
+  font-weight: 400
+  font-size: 16px
+  color: $white
+
+.gallery__swiper-button-next::after,
+.gallery__swiper-button-prev::after
+  position: absolute
+
+.gallery__swiper-button-next::after
+  content: ''
+
+.gallery__swiper-button-prev::after
+  content: ''
+
+.gallery__swiper-button-next:focus-visible,
+.gallery__swiper-button-prev:focus-visible
+  outline: none
+
+.gallery__swiper-button-next:focus-visible:not(:hover):not(:active) svg .gallery__svg-focus,
+.gallery__swiper-button-prev:focus-visible:not(:hover):not(:active) svg .gallery__svg-focus
+  stroke-width: 2
+
+.gallery__swiper-button-next:hover svg path,
+.gallery__swiper-button-prev:hover svg path
+  fill: $accordionCircle
+
+.gallery__swiper-button-next:active svg path,
+.gallery__swiper-button-prev:active svg path
+  fill: $menuClick
+
+.gallery__swiper-button-next:active svg .gallery__svg-focus,
+.gallery__swiper-button-prev:active svg .gallery__svg-focus
+  stroke-width: 2
+
+@media (max-width: 1880px)
+  .choices
+    width: 280px
+
+  .choices__list--dropdown, .choices__list[aria-expanded]
+    width: 280px
+
+@media (max-width: 1760px)
+  .gallery__content-left
+    margin-right: 130px
 
 @media (max-width: 1420px)
   .gallery
-    height: 560px
+    background-image: url(image/gallery/bg_1024.png)
+    &__container
+      padding-bottom: 45px
+    &__content-left
+      margin-right: 50px
 
-  .gallery__left
-    display: block
+  .choices
+    margin-bottom: 115px
 
-  .gallery__cb
-    margin-top: 105px
-    gap: 0
+@media (max-width: 1008px)
+  .gallery
+    background-image: url(image/gallery/bg_768.png)
+    &__container
+      flex-direction: column
+      padding-bottom: 60.5px
+    &__content-left
+      margin-right: 0
+      margin-bottom: 47px
 
-  .gallery__picture
-    grid-template-columns: repeat(2, 280px)
-
-  .gallery__slide-img
-    width: 280px
-    height: 315px
+  .choices
+    margin-bottom: 48px
 
   .gallery__swiper-container
     padding-top: 0
+
+  .gallery__swiper-button-prev
+    left: 1px
+
+  .gallery__swiper-button-next
+    right: 0px
+
+@media (max-width: 687px)
+  .gallery
+    background-image: url(image/gallery/bg_320.png)
+    &__container
+      padding-bottom: 21px
+    &__title
+      margin-bottom: 18px
+    &__text
+      margin-bottom: 13px
+
+  .choices
+    margin-bottom: 37px
+    width: 290px
+    &__list--dropdown, .choices__list[aria-expanded]
+      background-color: $menuBottom
+    &__list--dropdown, .choices__list[aria-expanded]
+      width: 290px
+
+  .gallery__content-left
+    margin-bottom: 37px
+
+  .gallery__swiper-container
+    flex-direction: column
+    align-items: center
+
+  .gallery__swiper-wrapper
+    height: 367px
+    margin-bottom: 19px
+
+  .gallery__swiper-pagination
+    left: 47px
+    bottom: 0px
