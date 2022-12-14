@@ -60,12 +60,10 @@
   &:not(:last-child)
     margin-bottom: 30px
 
-.header-bg-focus,
-.bg-focus
+.header-bg-focus
   z-index: 3
 
-.header-bg-focus:before,
-.bg-focus:before
+.header-bg-focus:before
   content: ""
   position: absolute
   top: -6px
@@ -77,14 +75,10 @@
   opacity: 0
   transition: opacity .4s ease-in-out
 
-.bg-focus:before
-  background-color: $accordionCircle
-
 .header-bg-focus:focus-visible
   outline: none
 
 .header-bg-focus:focus-visible:not(:hover):before,
-.bg-focus:focus-visible:not(:hover):before,
 .outline-focus:focus-visible:not(:hover):before
   opacity: 1
 

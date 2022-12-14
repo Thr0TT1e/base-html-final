@@ -7,9 +7,13 @@
 .catalog__columns
   display: grid
   grid-template-columns: repeat(2, 1fr)
+  grid-template-areas: "left rigth"
 
 .catalog__left
   min-width: 750px
+
+.catalog__left-name
+  grid-area: left
 
 .catalog__pic
   margin-bottom: 30px
@@ -34,6 +38,9 @@
 
 .catalog__rigth
   min-width: 800px
+
+.catalog__rigth-name
+  grid-area: rigth
 
 .card
   border: none
@@ -134,9 +141,61 @@
 .card-body
   padding: 25px 0
 
+.card-body__wrap
+  padding: 25px 0
+  min-height: 339px
+  align-items: center
+
 .catalog__column
   display: grid
   grid-template-columns: repeat(3, 1fr)
+
+.catalog__item-place
+  margin-right: 24px
+  position: relative
+  width: 275px
+  height: 189px
+  border: 1px solid #b7b7b7
+  &::before
+    content: ''
+    position: absolute
+    top: 12px
+    left: 12px
+    right: 12px
+    bottom: 12px
+    max-width: 251px
+    max-height: 165px
+    background-color: #b7b7b7
+
+.catalog__item-content
+  max-width: 275px
+
+.catalog__item-text
+  margin-bottom: 5px
+  font-weight: 600
+  font-size: 1.5rem
+  color: $baseText
+
+.catalog__item-desc
+  margin-bottom: 5px
+  font-weight: 400
+  line-height: 21.79px
+  font-size: 1rem
+  color: $baseText
+
+.catalog__item-link
+  font-weight: 600
+  font-size: 1rem
+  color: $accordionCircle
+  transition: border .2s ease-in-out
+  &:focus-visible
+    color: $white
+  &:hover
+    color: $accordionCircle
+    border-bottom: 1px solid $accordionCircle
+  &:active
+    color: $menuClick
+    border-bottom: 1px solid $menuClick
 
 .catalog__circle
   position: absolute
@@ -158,3 +217,31 @@
 
   .catalog__column
     grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 1008px)
+  .catalog__columns
+    grid-template-columns: 1fr
+    grid-template-areas: "rigth" "left"
+
+  .catalog__left
+    min-width: 670px
+
+  .catalog__rigth
+    min-width: 670px
+
+@media (max-width: 687px)
+  .card-body__wrap
+    min-height: unset
+    padding: 21px 0
+
+  .catalog__item-place
+    height: 130px
+    &::before
+      top: 6px
+      left: 6px
+      right: 6px
+      bottom: 6px
+
+  .catalog__item-text
+    margin-bottom: 5px
+    font-size: 1.125rem
