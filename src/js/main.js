@@ -95,6 +95,38 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
+  const swiperDoings = new Swiper('.doings__swiper-container', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 40,
+    loop: false,
+    navigation: {
+      nextEl: '.doings__swiper-button-next',
+      prevEl: '.doings__swiper-button-prev',
+    },
+    pagination: {
+      el: '.doings__swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      687: {
+        slidesPerView: 2,
+        spaceBetween: 34,
+        slidesPerGroup: 2,
+      },
+      1000: {
+        slidesPerView: 3,
+        spaceBetween: 27,
+        slidesPerGroup: 3,
+      },
+      1761: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+        slidesPerGroup: 3,
+      },
+    },
+  });
+
   const swiperProjects = new Swiper('.projects__swiper-container', {
     slidesPerView: 1,
     slidesPerGroup: 1,
