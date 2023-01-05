@@ -39,7 +39,7 @@
 .projects__swiper-link
   display: grid
   place-content: center
-  & > img
+  .projects__swiper-img
     width: 100%
   &::after
     content: ''
@@ -89,14 +89,6 @@
 .projects__next:active svg path
   fill: $accordionCircleBg
 
-// .projects__btn
-//   align-self: center
-//   width: 30px
-//   height: 30px
-//   border: none
-//   border-radius: 50px
-//   background-color: $btnSlide
-
 .projects__descr-link
   text-decoration: none
   color: $accordionCircle
@@ -113,3 +105,22 @@
 @media (max-width: 1420px)
   .projects__swiper-container
     margin: 0 53px
+
+@media (max-width: 687px)
+  .projects
+    margin-bottom: 50px
+
+  .projects__swiper-container
+    margin: 0 47px
+
+  .projects__swiper-slide
+    height: 65px !important
+
+  .projects__btn
+    top: 20px
+
+  .projects__swiper-link
+    justify-items: center
+
+  .projects__swiper-link .projects__swiper-img
+    width: 58%
