@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     searchEnabled: false,
     position: 'bottom',
   });
-  console.log('🚀 ~ file: main.js:63 ~ choiceGallery', choiceGallery);
 
   // swiper
   const swiper = new Swiper('.gallery__swiper-container', {
