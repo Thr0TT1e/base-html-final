@@ -469,14 +469,24 @@
     <main>
       <section class="hero">
         <picture>
-          <!-- <source media="(min-width: )" srcset=""> -->
-          <img src="./image/hero/1.jpg" alt="Картина" class="hero__img" />
+          <source media="(max-width: 687px)" srcset="./image/hero/1_320.jpg" />
+
+          <source media="(max-width: 1008px)" srcset="./image/hero/1_768.jpg" />
+
+          <source
+            media="(max-width: 1420px)"
+            srcset="./image/hero/1_1024.jpg"
+          />
+
+          <img src="./image/hero/1_1920.jpg" alt="Картина" class="hero__img" />
         </picture>
 
         <div class="hero__block">
           <div class="container-fluid">
             <div class="row">
-              <div class="hero__header col-6">Прикоснитесь к прекрасному</div>
+              <div class="hero__header col-12 col-sm-6">
+                Прикоснитесь к прекрасному
+              </div>
             </div>
 
             <div class="row">
