@@ -209,6 +209,9 @@
   background-color: $accordionCircleBg
 
 @media (max-width: 1420px)
+  .catalog
+    margin-bottom: 50px
+
   .catalog__left
     min-width: 437px
 
@@ -230,6 +233,30 @@
     min-width: 670px
 
 @media (max-width: 687px)
+  .catalog__left
+    min-width: 320px
+
+  .catalog__rigth
+    min-width: 320px
+
+  .catalog__desc
+    display: none
+
+  .catalog__item-title
+    font-size: 1.125rem
+
+  .catalog__item-top
+    padding-top: 20px
+    padding-bottom: 20px
+
+  .catalog__item-button svg
+    width: 100%
+    height: 100%
+
+  .catalog__item-button
+    width: 30px
+    height: 30px
+
   .card-body__wrap
     min-height: unset
     padding: 21px 0
@@ -245,3 +272,6 @@
   .catalog__item-text
     margin-bottom: 5px
     font-size: 1.125rem
+
+  .catalog__header
+    line-height: 33px
