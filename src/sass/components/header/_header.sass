@@ -102,7 +102,7 @@
   transition-property: background, color
   transition-timing-function: linear
   transition-duration: .2s
-  background-image: url(./image/header/login.svg)
+  background-image: url('@/image/header/login.svg')
   background-size: 13px 13px
   background-repeat: no-repeat
   background-position: left 4.5px top 6px
@@ -110,13 +110,13 @@
   z-index: 2
   &:hover
     color: #C283F3
-    background-image: url(./image/header/login-hover.svg)
+    background-image: url('@/image/header/login-hover.svg')
     background-size: 17.5px 13px
     background-position: left 0 top 6px
     outline: none
   &:active
     color: $accordionCircle
-    background-image: url(./image/header/login-active.svg)
+    background-image: url('@/image/header/login-active.svg')
     background-size: 17.5px 13px
     background-position: left 0 top 6px
 
@@ -213,68 +213,68 @@ input::-webkit-search-results-decoration
 
 // Реализм
 .header__dropdown__li-tintoretto
-  background-image: url('image/header/realism/tintoretto.png')
+  background-image: url('@/image/header/realism/tintoretto.png')
 
 .header__dropdown__li-fridrih
-  background-image: url('image/header/realism/fridrih.png')
+  background-image: url('@/image/header/realism/fridrih.png')
 
 .header__dropdown__li-leonardo
-  background-image: url('image/header/realism/leonardo.png')
+  background-image: url('@/image/header/realism/leonardo.png')
 
 .header__dropdown__li-verroku
-  background-image: url('image/header/realism/verroku.png')
+  background-image: url('@/image/header/realism/verroku.png')
 
 // Импрессионизм
 .header__dropdown__li-mone
-  background-image: url('image/header/impressionism/mone.png')
+  background-image: url('@/image/header/impressionism/mone.png')
 
 .header__dropdown__li-sisley
-  background-image: url('image/header/impressionism/sisley.png')
+  background-image: url('@/image/header/impressionism/sisley.png')
 
 .header__dropdown__li-mane
-  background-image: url('image/header/impressionism/mane.png')
+  background-image: url('@/image/header/impressionism/mane.png')
 
 .header__dropdown__li-renuar
-  background-image: url('image/header/impressionism/renuar.png')
+  background-image: url('@/image/header/impressionism/renuar.png')
 
 // Постимпрессионизм
 .header__dropdown__li-vangog
-  background-image: url('image/header/post-impressionism/van-gog.png')
+  background-image: url('@/image/header/post-impressionism/van-gog.png')
 
 .header__dropdown__li-sezan
-  background-image: url('image/header/post-impressionism/sezan.png')
+  background-image: url('@/image/header/post-impressionism/sezan.png')
 
 .header__dropdown__li-gogen
-  background-image: url('image/header/post-impressionism/gogen.png')
+  background-image: url('@/image/header/post-impressionism/gogen.png')
 
 .header__dropdown__li-siora
-  background-image: url('image/header/post-impressionism/siora.png')
+  background-image: url('@/image/header/post-impressionism/siora.png')
 
 // Авангард
 .header__dropdown__li-kandinskiy
-  background-image: url('image/header/avant-garde/kandinskiy.png')
+  background-image: url('@/image/header/avant-garde/kandinskiy.png')
 
 .header__dropdown__li-marinetti
-  background-image: url('image/header/avant-garde/marinetti.png')
+  background-image: url('@/image/header/avant-garde/marinetti.png')
 
 .header__dropdown__li-malevich
-  background-image: url('image/header/avant-garde/malevich.png')
+  background-image: url('@/image/header/avant-garde/malevich.png')
 
 .header__dropdown__li-picasso
-  background-image: url('image/header/avant-garde/picasso.png')
+  background-image: url('@/image/header/avant-garde/picasso.png')
 
 // Футуризм
 .header__dropdown__li-karra
-  background-image: url('image/header/futurism/karra.png')
+  background-image: url('@/image/header/futurism/karra.png')
 
 .header__dropdown__li-pratella
-  background-image: url('image/header/futurism/pratella.png')
+  background-image: url('@/image/header/futurism/pratella.png')
 
 .header__dropdown__li-severinni
-  background-image: url('image/header/futurism/severinni.png')
+  background-image: url('@/image/header/futurism/severinni.png')
 
 .header__dropdown__li-balla
-  background-image: url('image/header/futurism/balla.png')
+  background-image: url('@/image/header/futurism/balla.png')
 
 .header__dropdown__li
   .dropdown-item
@@ -317,8 +317,8 @@ input::-webkit-search-results-decoration
     content: ""
     position: absolute
     background-color: #fff
-    -webkit-mask-image: url("./image/header/login.svg")
-    mask-image: url("./image/header/login.svg")
+    -webkit-mask-image: url('@/image/header/login.svg')
+    mask-image: url('@/image/header/login.svg')
     mask-repeat: no-repeat
     top: 15px
     bottom: 0
@@ -340,16 +340,16 @@ input::-webkit-search-results-decoration
     color: $menuHover
   .header__link:hover::before
     background-color: $menuHover
-    -webkit-mask-image: url("./image/header/login.svg")
-    mask-image: url("./image/header/login.svg")
+    -webkit-mask-image: url('@/image/header/login.svg')
+    mask-image: url('@/image/header/login.svg')
 
 .header__logIn
   .header__link:active
     color: $menuClick
   .header__link:active::before
     background-color: $menuClick
-    -webkit-mask-image: url("./image/header/login.svg")
-    mask-image: url("./image/header/login.svg")
+    -webkit-mask-image: url('@/image/header/login.svg')
+    mask-image: url('@/image/header/login.svg')
 
 .header__menuBottom
   padding-top: 23px
@@ -396,7 +396,7 @@ input::-webkit-search-results-decoration
   margin-right: 9px
   border: none
   background-color: transparent
-  background-image: url("./image/header/search.svg")
+  background-image: url('@/image/header/search.svg')
   background-repeat: no-repeat
   background-position: 0 0
   background-size: contain

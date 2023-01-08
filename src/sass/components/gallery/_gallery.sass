@@ -1,5 +1,5 @@
 .gallery
-  background-image: url(image/gallery/bg_1920.png)
+  background-image: url('@/image/gallery/bg_1920.png')
   background-repeat: no-repeat
   background-size: cover
   background-position: center
@@ -61,14 +61,14 @@
   border-radius: 6px
 
 .choices[data-type*=select-one]::after
-  content: url(image/gallery/header-arrow.svg)
+  content: url('@/image/gallery/header-arrow.svg')
   right: 25px
   top: 12px
   border: none
   z-index: 11
 
 .choices[data-type*=select-one].is-open::after
-  content: url(image/gallery/arrow-open.svg)
+  content: url('@/image/gallery/arrow-open.svg')
   margin-top: -2px
 
 .choices__placeholder
@@ -141,7 +141,7 @@
     background-size: 4px
     transition: border-color .2s ease-in-out
   &:checked+label::before
-    background-image: url(image/gallery/checkbox-checked.svg)
+    background-image: url('@/image/gallery/checkbox-checked.svg')
     border-color: #C283F3
 
 .gallery__input-checkbox:hover+label::before,
@@ -181,7 +181,7 @@
   position: relative
   max-width: 350px
   &::after
-    content: url(image/gallery/lupa.svg)
+    content: url('@/image/gallery/lupa.svg')
     position: absolute
     max-width: 300px
     max-height: 300px
@@ -293,7 +293,7 @@
 
 @media (max-width: 1420px)
   .gallery
-    background-image: url(image/gallery/bg_1024.png)
+    background-image: url('@/image/gallery/bg_1024.png')
     &__container
       padding-bottom: 45px
     &__content-left
@@ -304,7 +304,7 @@
 
 @media (max-width: 1008px)
   .gallery
-    background-image: url(image/gallery/bg_768.png)
+    background-image: url('@/image/gallery/bg_768.png')
     &__container
       flex-direction: column
       padding-bottom: 60.5px
@@ -326,7 +326,7 @@
 
 @media (max-width: 687px)
   .gallery
-    background-image: url(image/gallery/bg_320.png)
+    background-image: url('@/image/gallery/bg_320.png')
     &__container
       padding-bottom: 21px
     &__title

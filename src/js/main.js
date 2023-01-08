@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
       {},
       {
         iconLayout: 'default#image',
-        iconImageHref: 'image/map/placemark.svg',
+        iconImageHref: './image/map/placemark.svg',
         iconImageSize: [20, 20],
         iconImageOffset: [-2, -40],
       }
