@@ -1,53 +1,122 @@
-.projects
-  margin-bottom: 80px
+.projects__container
+  padding-bottom: 80px
 
-.projects__desc
-  margin-bottom: 30px
-  font-weight: 400
-  font-size: 1rem
-  line-height: 32px
-  a
-    color: $btnHero
+.projects__title
+  margin-bottom: 15px
+
+.projects__descr
+  margin-bottom: 22px
+
+.projects__tooltip-wrap
+  position: relative
+  display: inline-block
+
+.projects__tooltip-marker
+  width: 18px
+  height: 18px
+  cursor: pointer
+
+.projects__tooltip-content
+  display: block
+  position: absolute
+  bottom: 38px
+  left: -125px
+  padding: 8px 11px
+  width: 264px
+  min-height: 34px
+  text-align: center
+  font-weight: 600
+  font-size: 12px
+  line-height: 16.34px
+  color: $white
+  background-color: $colorPurpleDefault
+  transition: opacity .3s ease-in-out
+  opacity: 0
+  z-index: 3
+  &::after
+    content: ''
+    position: absolute
+    width: 14px
+    height: 14px
+    bottom: -7px
+    left: 126px
+    background-color: $colorPurpleDefault
+    transform: rotate(45deg)
+
+.projects__tooltip-marker svg path
+  transition: all .3s ease-in-out
+
+.projects__tooltip-marker:focus
+  outline: none
+
+.projects__tooltip-marker:focus:not(:active) svg path:not(:last-child),
+.projects__tooltip-marker:hover svg path:not(:last-child)
+  fill: $colorLightPurple
+
+.projects__tooltip-marker:active svg path:not(:last-child)
+  fill: $colorPurpleDefault
+
+.projects__tooltip-marker:active svg path:last-child
+  fill: $white
+
+.projects__tooltip-marker:focus + .projects__tooltip-content,
+.projects__tooltip-marker:hover + .projects__tooltip-content
+  opacity: 1
+
+.projects__descr-link
+  color: $colorPurpleDefault
+  &:focus-visible
+    color: $white
+    background-color: $colorPurpleDefault
+  &:hover
+    color: $colorPurpleDefault
+    border-bottom: 1px solid $colorPurpleDefault
+  &:active
+    color: $colorDarkPurple
+    border-bottom: 1px solid $colorDarkPurple
+
+.projects__second-title
+  margin-bottom: 26px
+  font-weight: 600
+  font-size: 24px
+  color: $black
 
 .projects__swiper
   position: relative
-
-.projects__swiper-container
-  position: relative
-  margin: 0 75px
-  max-width: 1450px
-  overflow: hidden
-
-.projects__swiper-wrapper
-  width: 100%
-  height: 100%
-  box-sizing: border-box
-
-.projects__swiper-slide
-  position: relative !important
-  display: flex
-  align-items: center
-  justify-content: center
-  height: 150px !important
-  border: 1px solid $accordionGrey
-  transition: all .2s ease-in-out
-
-.projects__swiper-slide:focus-within,
-.projects__swiper-slide:active
-  border-color: $accordionCircle
-
-.projects__swiper-link
-  display: grid
-  place-content: center
-  .projects__swiper-img
+  &-container
+    position: relative
+    margin: 0 75px
+    max-width: 1450px
+    overflow: hidden
+  &-wrapper
     width: 100%
-  &::after
+    height: 100%
+    box-sizing: border-box
+  &-slide
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 150px
+    border: 1px solid #cacaca
+    transition: all .2s ease-in-out
+  &-link
+    display: flex
+    align-items: center
+    justify-content: center
+  &-link > img
+    width: 100%
+  &-link::after
     content: ''
     position: absolute
     top: 0
     left: 0
     width: 100%
     height: 100%
+
+.projects__swiper-slide:focus-within,
+.projects__swiper-slide:active
+  border-color: $colorPurpleDefault
 
 .projects__swiper-slide:hover .projects__swiper-img,
 .projects__swiper-slide:active .projects__swiper-img
@@ -57,70 +126,108 @@
   filter: grayscale(1) opacity(0.4)
   transition: all .2s ease-in-out
 
-.projects__btn
+.projects__swiper-button-prev,
+.projects__swiper-button-next
   position: absolute
   width: 30px
   height: 30px
   top: 82px
 
-.projects__prev
+.projects__swiper-button-prev
   left: 0
-  &::after
-    content: ''
-  &:focus
-    outline: none
 
-.projects__next
+.projects__swiper-button-next
   right: 0
-  &::after
-    content: ''
-  &:focus
-    outline: none
 
-.projects__prev:focus-visible svg .projects__swiper-button--focus,
-.projects__next:focus-visible svg .projects__swiper-button--focus,
-.projects__prev:active svg .projects__swiper-button--focus,
-.projects__next:active svg .projects__swiper-button--focus
-  stroke: $accordionCircle
+.projects__swiper-button-prev::after,
+.projects__swiper-button-next::after
+  content: ''
 
-.projects__prev:hover svg path,
-.projects__next:hover svg path,
-.projects__prev:active svg path,
-.projects__next:active svg path
-  fill: $accordionCircleBg
+.projects__swiper-button-prev:focus,
+.projects__swiper-button-next:focus
+  outline: none
 
-.projects__descr-link
-  text-decoration: none
-  color: $accordionCircle
-  &:focus-visible
-    color: $white
-    background-color: $accordionCircle
-  &:hover
-    color: $accordionCircle
-    border-bottom: 1px solid $accordionCircle
-  &:active
-    color: $menuClick
-    border-bottom: 1px solid $menuClick
+.projects__swiper-button-prev:focus-visible svg .projects__swiper-button-focus,
+.projects__swiper-button-next:focus-visible svg .projects__swiper-button-focus,
+.projects__swiper-button-prev:active svg .projects__swiper-button-focus,
+.projects__swiper-button-next:active svg .projects__swiper-button-focus
+  stroke: $colorPurpleDefault
+
+.projects__swiper-button-prev:hover svg path,
+.projects__swiper-button-next:hover svg path,
+.projects__swiper-button-prev:active svg path,
+.projects__swiper-button-next:active svg path
+  fill: $colorLightPurple
 
 @media (max-width: 1420px)
+  .projects__container
+    padding-top: 0
+
+  .projects__tooltip-content::after
+    content: none
+
+  .projects__swiper-slide
+    height: 128px
+
   .projects__swiper-container
     margin: 0 53px
 
+  .projects__swiper-button-prev,
+  .projects__swiper-button-next
+    top: 71px
+
+  .projects__swiper-link > img
+    width: 87%
+
+@media (max-width: 1008px)
+  .projects__descr
+    margin-bottom: 31px
+    width: 99%
+    &-link-addition
+      display: none
+
+  .projects__second-title
+    margin-bottom: 31px
+
+  .projects__swiper-slide
+    height: 106px
+
+  .projects__swiper-button-prev,
+  .projects__swiper-button-next
+    top: 61px
+
+  .projects__swiper-link > img
+    width: 85%
+
 @media (max-width: 687px)
-  .projects
-    margin-bottom: 50px
+  .projects__container
+    padding-top: 0
+
+  .projects__descr
+    margin-bottom: 17px
+    width: 100%
+    font-size: 16px
+    line-height: 32px
+    &-link-addition
+      display: inline
+
+  .projects__second-title
+    margin-bottom: 16px
+    font-size: 18px
 
   .projects__swiper-container
     margin: 0 47px
 
   .projects__swiper-slide
-    height: 65px !important
+    height: 65px
 
-  .projects__btn
-    top: 20px
+  .projects__swiper-button-prev,
+  .projects__swiper-button-next
+    top: 40px
 
-  .projects__swiper-link
-    justify-items: center
+  .projects__tooltip-content
+    width: unset
+    max-width: 264px
 
-  .projects__swiper-link .projects__swiper-img
+  .projects__swiper-link > img
     width: 58%

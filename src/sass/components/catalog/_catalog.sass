@@ -1,154 +1,145 @@
-.catalog
-  margin-bottom: 80px
+.catalog__container
+  padding-top: 80px
+  padding-bottom: 78px
 
-.catalog__desc
-  margin-bottom: 50px
+.catalog__descr
+  margin-bottom: 38px
 
-.catalog__columns
-  display: grid
-  grid-template-columns: repeat(2, 1fr)
-  grid-template-areas: "left rigth"
+.catalog__content-left
+  width: 46.875%
+  margin-right: 50px
 
-.catalog__left
-  min-width: 750px
+.catalog__content-info
+  display: none
+  &-active
+    display: block
 
-.catalog__left-name
-  grid-area: left
+.catalog__img-block
+  margin-bottom: 33px
+  max-width: 750px
+  max-height: 470px
 
-.catalog__pic
-  margin-bottom: 30px
+.catalog__content-img
+  height: 470px
+  object-fit: cover
+  &-position
+    object-position: 0 -185px
 
-.catalog__header
-  margin-bottom: 15px
-  font-size: 1.5rem
-  font-weight: 600
-  line-height: 32px
-
-.catalog__date
-  margin-bottom: 15px
-  font-size: .75rem
+.catalog__content-descr
   font-weight: 400
-  line-height: 16px
-  color: $dateFoto
-
-.catalog__para
-  font-size: 1rem
-  font-weight: 400
+  font-size: 16px
   line-height: 32px
+  color: $colorDarkGray
+  &-color
+    font-size: 12px
+    color: #999
 
-.catalog__rigth
-  min-width: 800px
-
-.catalog__rigth-name
-  grid-area: rigth
-
-.card
-  border: none
-
-.card-header
-  padding: 41px 0
-  background-color: transparent
-  bs-card-spacer-y: 0
-  border-radius: 0 !important
-  border: none
-  button
-    text-decoration: none
-    color: $accordionBorder
-    &:hover
-      color: $accordionBorder
-  .btn
-    padding: 0
-    font-size: 1.5rem
-    font-weight: 600
-    line-height: 32px
-
-.catalog__item-top
-  display: flex
-  border-top: 1px solid #cacaca
-  border-bottom: 1px solid #cacaca
-  transition: all 0.2s ease-in-out
-
-.catalog__item:hover
-  position: relative
-  border-color: $accordionCircle
-  z-index: 1
-
-.catalog__item-top
-  position: relative
-  width: 100%
-  padding-top: 33px
-  padding-bottom: 28px
-  justify-content: space-between
-  align-items: center
-  cursor: pointer
-
-.catalog__item-title
+.catalog__content-title
+  margin-bottom: 2px
   font-weight: 600
   font-size: 24px
-  line-height: 32px
-  transition: all .2s ease-in-out
+  color: $colorDarkGray
+
+.catalog__content-right
+  width: 50%
+
+.catalog__item
+  width: 100%
+  height: 100%
+  margin-top: -1px
+  transition: all 0.2s ease-in-out
+  cursor: pointer
+  &-top
+    border-top: 1px solid #cacaca
+    border-bottom: 1px solid #cacaca
+    transition: all 0.2s ease-in-out
+  &:hover
+    position: relative
+    border-color: $colorPurpleDefault
+    z-index: 1
+  &-top
+    position: relative
+    width: 100%
+    padding-top: 33px
+    padding-bottom: 28px
+    justify-content: space-between
+    align-items: center
+  &-title
+    font-weight: 600
+    font-size: 24px
+    line-height: 32px
+    transition: all .2s ease-in-out
 
 .catalog__item-top:focus-within,
 .catalog__item-top:focus-within .catalog__item-button
   outline: none
 
 .catalog__item-top:focus-within .catalog__item-title
-  background-color: $accordionCircle
+  background-color: $colorPurpleDefault
   color: $white
 
 .catalog__item-top:focus-within svg path,
 .catalog__item-top:hover svg path,
 .ui-accordion-header-active svg path
-  fill: $accordionCircleBg
+  fill: $colorLightPurple
 
 .catalog__item-top:focus-within svg .catalog__svg-focus,
 .catalog__item-top:hover:not(:active) svg .catalog__svg-focus
-  stroke: $accordionCircleBg
+  stroke: $colorLightPurple
 
 .catalog__item-top:active svg .catalog__svg-focus
-  stroke: $accordionCircle
+  stroke: $colorPurpleDefault
   stroke-width: 2
 
 .catalog__item-top:hover
-  color: $accordionCircle
-  border-color: $accordionCircle
+  color: $colorPurpleDefault
+  border-color: $colorPurpleDefault
 
 .ui-accordion-header-active,
 .catalog__item-top:active
   position: relative
-  color: $menuClick
-  border-color: $menuClick
+  color: $colorDarkPurple
+  border-color: $colorDarkPurple
 
 .ui-accordion-header-active svg
   transform: rotate(180deg)
-
-.ui-accordion-header-active svg .catalog__svg-focus
-  stroke: $accordionCircle
-  stroke-width: 2
+  & .catalog__svg-focus
+    stroke: $colorPurpleDefault
+    stroke-width: 2
 
 .ui-accordion-header-icon
   display: none
 
-.btn-reset
-  padding: 0
-  border: none
-  background: transparent
-  position: relative
-  cursor: pointer
-  transition-property: background-color, box-shadow
-  transition: .2s ease-in-out
-
-.card-body
-  padding: 25px 0
-
-.card-body__wrap
+.catalog__bottom-list-wrap
   padding: 25px 0
   min-height: 339px
   align-items: center
 
-.catalog__column
+.catalog__bottom-list
   display: grid
-  grid-template-columns: repeat(3, 1fr)
+  grid-auto-flow: column
+  grid-template-rows: repeat(9, 1fr)
+  grid-gap: 0 60px
+
+.catalog__bottom-item
+  font-weight: 400
+  font-size: 16px
+  line-height: 32px
+  color: $colorDarkGray
+
+.catalog__bottom-btn
+  text-align: start
+  color: $colorDarkGray
+  &:focus-visible:not(:hover):not(:active)
+    background-color: $colorPurpleDefault
+    color: $colorPurpleDefault
+    outline: none
+  &:hover
+    color: $colorPurpleDefault
+  &:active
+    color: $colorDarkPurple
+  &-active
+    color: $colorDarkPurple
 
 .catalog__item-place
   margin-right: 24px
@@ -173,77 +164,91 @@
 .catalog__item-text
   margin-bottom: 5px
   font-weight: 600
-  font-size: 1.5rem
-  color: $baseText
+  font-size: 24px
+  color: $colorDarkGray
 
-.catalog__item-desc
+.catalog__item-descr
   margin-bottom: 5px
   font-weight: 400
   line-height: 21.79px
-  font-size: 1rem
-  color: $baseText
+  font-size: 16px
+  color: $colorDarkGray
 
 .catalog__item-link
   font-weight: 600
-  font-size: 1rem
-  color: $accordionCircle
+  font-size: 16px
+  color: $colorPurpleDefault
   transition: border .2s ease-in-out
   &:focus-visible
     color: $white
   &:hover
-    color: $accordionCircle
-    border-bottom: 1px solid $accordionCircle
+    color: $colorPurpleDefault
+    border-bottom: 1px solid $colorPurpleDefault
   &:active
-    color: $menuClick
-    border-bottom: 1px solid $menuClick
+    color: $colorDarkPurple
+    border-bottom: 1px solid $colorDarkPurple
 
-.catalog__circle
-  position: absolute
-  top: 0
-  bottom: 0
-  right: 0
-  width: 50px
-  height: 50px
-  border-radius: 50px
-  border: 2px solid $accordionCircle
-  background-color: $accordionCircleBg
+@media (max-width: 1760px)
+  .catalog__bottom-list
+    grid-template-rows: repeat(12, 1fr)
+    grid-gap: 0 55px
 
 @media (max-width: 1420px)
-  .catalog
-    margin-bottom: 50px
+  .catalog__container
+    padding-bottom: 79px
 
-  .catalog__left
-    min-width: 437px
+  .catalog__content-left
+    width: 50%
 
-  .catalog__rigth
-    min-width: 437px
+  .catalog__content-img
+    height: 274px
+    &-position
+      object-position: 0 -100px
 
-  .catalog__column
-    grid-template-columns: repeat(2, 1fr)
+  .catalog__img-block
+    max-height: 274px
+
+  .catalog__content-title
+    margin-bottom: 0.1px
 
 @media (max-width: 1008px)
-  .catalog__columns
-    grid-template-columns: 1fr
-    grid-template-areas: "rigth" "left"
+  .catalog__content
+    flex-direction: column-reverse
+    &-left
+      margin-right: 0
+      width: 100%
+    &-right
+      margin-bottom: 51px
+      width: 100%
 
-  .catalog__left
-    min-width: 670px
+  .catalog__item-top
+    padding-top: 32.5px
 
-  .catalog__rigth
-    min-width: 670px
+  .catalog__descr
+    margin-bottom: 19px
+
+  .catalog__bottom-list
+    grid-template-rows: repeat(9, 1fr)
+    grid-gap: 0 58px
+
+  .catalog__img-block
+    max-height: 419.5px
+
+  .catalog__content-img
+    height: 419.5px
+
+  .catalog__container
+    padding-bottom: 69.5px
 
 @media (max-width: 687px)
-  .catalog__left
-    min-width: 320px
+  .catalog__content-right
+    margin-bottom: 50px
 
-  .catalog__rigth
-    min-width: 320px
-
-  .catalog__desc
+  .catalog__descr
     display: none
 
   .catalog__item-title
-    font-size: 1.125rem
+    font-size: 18px
 
   .catalog__item-top
     padding-top: 20px
@@ -257,10 +262,7 @@
     width: 30px
     height: 30px
 
-  .catalog__column
-    grid-template-columns: 1fr
-
-  .card-body__wrap
+  .catalog__bottom-list-wrap
     min-height: unset
     padding: 21px 0
 
@@ -274,7 +276,17 @@
 
   .catalog__item-text
     margin-bottom: 5px
-    font-size: 1.125rem
+    font-size: 18px
 
-  .catalog__header
-    line-height: 33px
+  .catalog__bottom-list
+    grid-template-rows: repeat(24, 1fr)
+
+  .catalog__img-block
+    margin-bottom: 23px
+    max-height: 181px
+
+  .catalog__content-img
+    height: 181px
+
+  .catalog__content-title
+    margin-bottom: 5px

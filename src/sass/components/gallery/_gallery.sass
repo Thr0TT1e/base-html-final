@@ -1,27 +1,22 @@
 .gallery
-  background-image: url('@/image/gallery/bg_1920.png')
+  background-image: url("@/image/gallery/bg_1920.png")
   background-repeat: no-repeat
   background-size: cover
   background-position: center
-
-.gallery__container
-  margin-bottom: 80px
-  padding-top: 80px
-  padding-bottom: 80px
-
-.gallery__title
-  margin-bottom: 22px
-  color: $white
-
-.gallery__content-left
-  max-width: 400px
-  margin-right: 50px
-
-.gallery__text
-  margin-bottom: 17px
-  font-weight: 600
-  font-size: 16px
-  color: $white
+  &__container
+    padding-top: 80px
+    padding-bottom: 80px
+  &__title
+    margin-bottom: 22px
+    color: $white
+  &__content-left
+    max-width: 400px
+    margin-right: 50px
+  &__text
+    margin-bottom: 17px
+    font-weight: 600
+    font-size: 16px
+    color: $white
 
 .choices
   margin-bottom: 185px
@@ -31,11 +26,11 @@
   border-radius: 6px
   border: 1px solid $white
   &:focus:not(:hover):not(:active)
-    background-color: rgba(255, 255, 255, 0.2)
+    background-color: $choices
 
 .choices:hover,
 .choices:active
-  background-color: rgba(255, 255, 255, 0.2)
+  background-color: $choices
 
 .choices__inner
   position: relative
@@ -61,14 +56,14 @@
   border-radius: 6px
 
 .choices[data-type*=select-one]::after
-  content: url('@/image/gallery/header-arrow.svg')
+  content: url("@/image/gallery/header-arrow.svg")
   right: 25px
   top: 12px
   border: none
   z-index: 11
 
 .choices[data-type*=select-one].is-open::after
-  content: url('@/image/gallery/arrow-open.svg')
+  content: url("@/image/gallery/arrow-open.svg")
   margin-top: -2px
 
 .choices__placeholder
@@ -76,7 +71,7 @@
 
 .is-open .choices__list--dropdown,
 .is-open .choices__list[aria-expanded]
-  border: 1px solid #999
+  border: 1px solid $dateFoto
 
 .is-focused .choices__inner,
 .is-open .choices__inner
@@ -87,9 +82,8 @@
 
 .choices__list--single
   padding: 0
-
-.choices__list--single .choices__item
-  color: $white
+  & .choices__item
+    color: $white
 
 .choices__list--dropdown .choices__list,
 .choices__list[aria-expanded] .choices__list
@@ -100,18 +94,18 @@
   margin: 0
   padding: 14px 20px
   height: 40px
-  border-bottom: 1px solid #999
+  border-bottom: 1px solid $dateFoto
 
 .choices__item
   font-weight: 400
   font-size: 16px
-  color: #999
+  color: $dateFoto
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted,
 .choices__list[aria-expanded] .choices__item--selectable.is-highlighted
   border: none
   color: $white
-  background-color: rgba(255, 255, 255, 0.2)
+  background-color: $choices
 
 .choices__list--dropdown .choices__item--selectable::after,
 .choices__list[aria-expanded] .choices__item--selectable::after
@@ -141,12 +135,12 @@
     background-size: 4px
     transition: border-color .2s ease-in-out
   &:checked+label::before
-    background-image: url('@/image/gallery/checkbox-checked.svg')
-    border-color: #C283F3
+    background-image: url("@/image/gallery/checkbox-checked.svg")
+    border-color: $menuHover
 
 .gallery__input-checkbox:hover+label::before,
 .gallery__input-checkbox:focus+label::before
-  border-color: #C283F3
+  border-color: $menuHover
 
 .gallery__label-checkbox
   font-weight: 400
@@ -159,7 +153,7 @@
 .gallery__input-checkbox:focus-visible+label,
 .gallery__label-checkbox:hover,
 .gallery__input-checkbox:checked+label
-  color: #C283F3
+  color: $menuHover
 
 .gallery__swiper-container
   position: relative
@@ -181,7 +175,7 @@
   position: relative
   max-width: 350px
   &::after
-    content: url('@/image/gallery/lupa.svg')
+    content: url("@/image/gallery/lupa.svg")
     position: absolute
     max-width: 300px
     max-height: 300px
@@ -192,7 +186,7 @@
     display: flex
     align-items: center
     justify-content: center
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: $menuBottom
     opacity: 0
     transition: all .2s linear
   &::before
@@ -202,11 +196,11 @@
     left: 0
     width: 100%
     height: 100%
-    box-shadow: inset 25px 25px rgba(194, 131, 243, 0.4), inset -25px -25px rgba(194, 131, 243, 0.4)
+    box-shadow: inset 25px 25px $menuActive, inset -25px -25px $menuActive
     opacity: 0
     transition: all .2s linear
   &:focus::before
-    box-shadow: inset 3px 3px $menuClick, inset -3px -3px $menuClick
+    box-shadow: inset 3px 3px $colorDarkPurple, inset -3px -3px $colorDarkPurple
     opacity: 1
 
 .gallery__slide-wrap:hover::after,
@@ -228,22 +222,21 @@
 
 .gallery__swiper-button-next,
 .gallery__swiper-button-prev
-  position: relative !important
+  position: relative
   width: 30px
   height: 30px
-  top: 5px
-
-.gallery__swiper-button-prev
-  left: 3px
+  top: 22px
+  &
+    left: 3px
 
 .gallery__swiper-button-next
   right: -3px
 
 .gallery__swiper-pagination
   position: absolute
-  left: 50px !important
-  bottom: 2px !important
-  width: 47px !important
+  left: 50px
+  bottom: 2px
+  width: 47px
   height: 23px
   margin-right: 11px
   font-weight: 400
@@ -270,21 +263,30 @@
 
 .gallery__swiper-button-next:hover svg path,
 .gallery__swiper-button-prev:hover svg path
-  fill: $accordionCircle
+  fill: $colorPurpleDefault
 
 .gallery__swiper-button-next:active svg path,
 .gallery__swiper-button-prev:active svg path
-  fill: $menuClick
+  fill: $colorDarkPurple
 
 .gallery__swiper-button-next:active svg .gallery__svg-focus,
 .gallery__swiper-button-prev:active svg .gallery__svg-focus
   stroke-width: 2
 
+.swiper-button-prev::after,
+.swiper-rtl .swiper-button-next::after
+  content: '' !important
+
+.swiper-button-next::after,
+.swiper-rtl .swiper-button-prev::after
+  content: '' !important
+
 @media (max-width: 1880px)
   .choices
     width: 280px
 
-  .choices__list--dropdown, .choices__list[aria-expanded]
+  .choices__list--dropdown,
+  .choices__list[aria-expanded]
     width: 280px
 
 @media (max-width: 1760px)
@@ -293,7 +295,7 @@
 
 @media (max-width: 1420px)
   .gallery
-    background-image: url('@/image/gallery/bg_1024.png')
+    background-image: url("@/image/gallery/bg_1024.png")
     &__container
       padding-bottom: 45px
     &__content-left
@@ -304,7 +306,7 @@
 
 @media (max-width: 1008px)
   .gallery
-    background-image: url('@/image/gallery/bg_768.png')
+    background-image: url("@/image/gallery/bg_768.png")
     &__container
       flex-direction: column
       padding-bottom: 60.5px
@@ -326,7 +328,7 @@
 
 @media (max-width: 687px)
   .gallery
-    background-image: url('@/image/gallery/bg_320.png')
+    background-image: url("@/image/gallery/bg_320.png")
     &__container
       padding-bottom: 21px
     &__title
@@ -334,16 +336,14 @@
     &__text
       margin-bottom: 13px
 
-  .gallery__container
-    padding-top: 50px
-    padding-bottom: 50px
-
   .choices
     margin-bottom: 37px
     width: 290px
-    &__list--dropdown, .choices__list[aria-expanded]
-      background-color: $menuBottom
-    &__list--dropdown, .choices__list[aria-expanded]
+    &__list--dropdown,
+    &__list[aria-expanded]
+      background-color: $black
+    &__list--dropdown,
+    &__list[aria-expanded]
       width: 290px
 
   .gallery__content-left

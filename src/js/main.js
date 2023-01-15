@@ -1,12 +1,16 @@
-import * as bootstrapIcons from 'bootstrap-icons/font/bootstrap-icons.css?inline';
-import '../sass/main.sass';
-import * as bootstrap from 'bootstrap';
+import 'normalize.css';
 import Choices from 'choices.js';
+import 'choices.js/public/assets/styles/choices.min.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import ymaps from 'ymaps';
+import 'simplebar';
+import 'simplebar/dist/simplebar.css';
+import Inputmask from 'inputmask';
+import JustValidate from 'just-validate';
+import '../sass/main.sass';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   // header - burger
   const openBurgerMenuHandler = () => {
     document.querySelector('#mobile-menu').classList.add('is-active-burger');
@@ -22,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     openBurgerMenuHandler();
   });
 
-  document.querySelector('#burger--close').addEventListener('click', () => {
+  document.querySelector('#burger-close').addEventListener('click', () => {
     closeBurgerHandler();
   });
 
@@ -55,17 +59,53 @@ document.addEventListener('DOMContentLoaded', function () {
       openSearchHandler();
     });
 
-  // gallery - select
-  const choiceGallery = new Choices('#gallery__select', {
-    searchEnabled: false,
-    position: 'bottom',
+  // header bottom menu
+  document.querySelectorAll('.header__btn-tab').forEach((item) => {
+    item.addEventListener('click', function () {
+      let btn = this;
+      let dropdown = this.parentElement.querySelector('.header__tab-dropdown');
+
+      document.querySelectorAll('.header__btn-tab').forEach((el) => {
+        if (el !== btn) {
+          el.classList.remove('active-btn');
+        }
+      });
+
+      document.querySelectorAll('.header__tab-dropdown').forEach((el) => {
+        if (el !== dropdown) {
+          el.classList.remove('active-dropdown');
+        }
+      });
+
+      dropdown.classList.toggle('active-dropdown');
+      btn.classList.toggle('active-btn');
+    });
+
+    document.addEventListener('click', (e) => {
+      let target = e.target;
+      if (!target.closest('.header__bottom-list')) {
+        document.querySelectorAll('.header__tab-dropdown').forEach((el) => {
+          el.classList.remove('active-dropdown');
+        });
+        document.querySelectorAll('.header__btn-tab').forEach((el) => {
+          el.classList.remove('active-btn');
+        });
+      }
+    });
   });
 
-  // swiper
-  const swiper = new Swiper('.gallery__swiper-container', {
+  // gallery
+  const elementGallery = document.querySelector('#gallery__select');
+  const choiceGallery = new Choices(elementGallery, {
+    searchEnabled: false,
+    position: 'bottom',
+    allowHTML: true,
+  });
+
+  // swiper - gallery
+  const swiperGallery = new Swiper('.gallery__swiper-container', {
     slidesPerView: 1,
     slidesPerGroup: 1,
-    // spaceBetween: 50,
     loop: false,
     navigation: {
       nextEl: '.gallery__swiper-button-next',
@@ -94,17 +134,18 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  const swiperDoings = new Swiper('.doings__swiper-container', {
+  // swiper - events
+  const swiperEvents = new Swiper('.events__swiper-container', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 40,
     loop: false,
     navigation: {
-      nextEl: '.doings__swiper-button-next',
-      prevEl: '.doings__swiper-button-prev',
+      nextEl: '.events__swiper-button-next',
+      prevEl: '.events__swiper-button-prev',
     },
     pagination: {
-      el: '.doings__swiper-pagination',
+      el: '.events__swiper-pagination',
       clickable: true,
     },
     breakpoints: {
@@ -126,13 +167,50 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
+  // catalog - accordion
+  console.log('🚀 ~ file: main.js:18 ~ $', $);
+  // $(function () {
+  $('.accordion').accordion({
+    heightStyle: 'content',
+    active: false,
+    collapsible: true,
+    animate: 500,
+  });
+  // });
+
+  document.querySelectorAll('.catalog__item-top').forEach((el) => {
+    el.addEventListener('mousedown', (e) => e.preventDefault());
+  });
+
+  // tab
+  document.querySelectorAll('.catalog__bottom-btn').forEach((tabsBtn) => {
+    tabsBtn.addEventListener('click', (e) => {
+      const path = e.currentTarget.dataset.path;
+
+      document.querySelectorAll('.catalog__bottom-btn').forEach((btn) => {
+        btn.classList.remove('catalog__bottom-btn-active');
+      });
+
+      e.currentTarget.classList.add('catalog__bottom-btn-active');
+
+      document.querySelectorAll('.catalog__content-info').forEach((tabsBtn) => {
+        tabsBtn.classList.remove('catalog__content-info-active');
+      });
+
+      document
+        .querySelector(`[data-target="${path}"]`)
+        .classList.add('catalog__content-info-active');
+    });
+  });
+
+  // swiper - projects
   const swiperProjects = new Swiper('.projects__swiper-container', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     loop: false,
     navigation: {
-      nextEl: '.projects__next',
-      prevEl: '.projects__prev',
+      nextEl: '.projects__swiper-button-next',
+      prevEl: '.projects__swiper-button-prev',
     },
     breakpoints: {
       500: {
@@ -154,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   ymaps.load().then((maps) => {
-    const map = new maps.Map('loadMap', {
+    const map = new maps.Map('map', {
       center: [55.760109, 37.591952],
       zoom: 14,
       controls: [],
@@ -189,5 +267,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     map.geoObjects.add(placemark);
     map.behaviors.disable('scrollZoom');
+  });
+
+  // contacts - form
+  const inputTel = document.querySelector("input[type='tel']");
+
+  Inputmask({
+    mask: '+7 (999) 999-99-99',
+  }).mask(inputTel);
+
+  new JustValidate('.contacts__form', {
+    rules: {
+      name: {
+        required: true,
+        minLength: 2,
+        maxLength: 30,
+      },
+      tel: {
+        required: true,
+        function: (name, value) => {
+          const phone = selector.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        },
+      },
+    },
+    messages: {
+      name: {
+        required: 'Как вас зовут?',
+        minLength: 'Недопустимый формат',
+        strength: 'Недопустимый формат',
+      },
+      tel: {
+        required: 'Укажите ваш телефон',
+        function: 'Недопустимый формат',
+      },
+    },
   });
 });

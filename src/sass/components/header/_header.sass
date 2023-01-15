@@ -1,136 +1,109 @@
 .header
   position: absolute
   top: 0
-  bottom: 0
   left: 0
   right: 0
-  height: 170px
-  z-index: 999
-
-.header__menuTop
-  padding-top: 30px
-  padding-bottom: 30px
-  background-color: #000
-
-.header__blockBurger
-  display: none
-
-.header__burger
-  display: none
-  width: 36px
-  height: 28px
-
-.header__menu-mobile
-  display: none
-  position: absolute
-  top: 0
-  left: 0
-  width: 100vw
-  height: 768px
-  padding: 37px 50px 51px 50px
-  background-color: $menuBurgerBg
-  transition: transform .3s ease-in-out
-  transform: translateX(-110%)
-  z-index: 1000
-
-.header__burger--close
-  margin-bottom: 30px
-  transition: transform .2s ease-in
-  &:active
+  z-index: 1
+  font-weight: 400
+  font-size: 18px
+  color: $white
+  &__top
+    position: relative
+    padding-top: 30px
+    padding-bottom: 30px
+    justify-content: space-between
+    align-items: center
+    background-color: $black
+  &__burger
+    display: none
+    width: 36px
+    height: 28px
+  &__menu-mobile
+    display: none
+    position: absolute
+    z-index: 5
+    top: 0
+    left: 0
+    width: 100vw
+    height: 768px
+    padding: 37px 50px 51px 50px
+    background-color: $menuBurgerBg
+    transition: transform .3s ease-in-out
+    transform: translateX(-101%)
+  &__burger-close
+    margin-bottom: 30px
+    transition: transform .2s ease-in
+  &__burger-close:active
     transform: rotate(90deg)
-
-.header__list-mobile
-  margin-bottom: auto
-  flex-direction: column
-
-.header__item-mobile
-  margin-bottom: 0
-
-.header__link
-  &:hover
+  &__list-mobile
+    margin-bottom: auto
+    flex-direction: column
+  &__item-mobile
+    margin-bottom: 0
+  &__link-mobile
+    font-weight: 600
+    font-size: 24px
+    line-height: 64px
+  &__link-mobile:not(:last-child)
+    margin-bottom: 30px
+  &__menu-button
+    width: 257px
+    height: 60px
+    border: 2px solid $colorPurpleDefault
+    border-radius: 90px
+  &__logo
+    width: 173px
+    height: 39.9px
+    margin-right: 179px
+  &__logo img
+    height: 100%
+  &__nav
+    margin-right: auto
+    width: 47%
+  &__list
+    width: 100%
+    justify-content: space-between
+  &__item
+    font-weight: 600
+  &__item:not(:last-child)
+    margin-right: 20px
+  &__link:hover
     outline: none
     color: $menuHover
-  &:active
-    color: $menuClick
-
-.header__link-mobile
-  font-weight: 600
-  font-size: 24px
-  line-height: 64px
-  &:not(:last-child)
-    margin-bottom: 30px
-
-.header-bg-focus
-  z-index: 3
-
-.header-bg-focus:before
-  content: ""
-  position: absolute
-  top: -6px
-  bottom: -6px
-  left: -6px
-  right: -6px
-  background-color: $menuClick
-  z-index: -1
-  opacity: 0
-  transition: opacity .4s ease-in-out
-
-.header-bg-focus:focus-visible
-  outline: none
-
-.header-bg-focus:focus-visible:not(:hover):before,
-.outline-focus:focus-visible:not(:hover):before
-  opacity: 1
-
-.btn-reset
-  padding: 0
-  border: none
-  background: transparent
-  position: relative
-  cursor: pointer
-  transition-property: background-color, box-shadow
-  transition: .2s ease-in-out
-
-.header__menu-button
-  width: 257px
-  height: 60px
-  border: 2px solid $accordionCircle !important
-  border-radius: 90px
-
-.header__button
-  padding-left: 25px
-  transition-property: background, color
-  transition-timing-function: linear
-  transition-duration: .2s
-  background-image: url('@/image/header/login.svg')
-  background-size: 13px 13px
-  background-repeat: no-repeat
-  background-position: left 4.5px top 6px
-  color: $white
-  z-index: 2
-  &:hover
-    color: #C283F3
-    background-image: url('@/image/header/login-hover.svg')
+  &__link:active
+    color: $colorDarkPurple
+  &__button
+    padding-left: 25px
+    transition-property: background, color
+    transition-timing-function: linear
+    transition-duration: .2s
+    background-image: url("@/image/header/login.svg")
+    background-size: 13px 13px
+    background-repeat: no-repeat
+    background-position: left 4.5px top 6px
+    color: $white
+    z-index: 2
+  &__button:hover
+    color: $menuHover
+    background-image: url("@/image/header/login-hover.svg")
     background-size: 17.5px 13px
     background-position: left 0 top 6px
     outline: none
-  &:active
-    color: $accordionCircle
-    background-image: url('@/image/header/login-active.svg')
+  &__button:active
+    color: $colorPurpleDefault
+    background-image: url("@/image/header/login-active.svg")
     background-size: 17.5px 13px
     background-position: left 0 top 6px
-
-.header__search-mobile--open
-  display: none
-  width: 29.45px
-  height: 28.82px
-
-.header__search-wrap
-  display: none
-  position: absolute
-  top: 35px
-  right: 49px
-  align-items: center
+  &__search-mobile-open
+    display: none
+    width: 29.45px
+    height: 28.82px
+  &__search-wrap
+    display: none
+    position: absolute
+    top: 35px
+    right: 49px
+    align-items: center
 
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
@@ -138,7 +111,7 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration
   display: none
 
-.header__search-mobile--open.search-active
+.header__search-mobile-open.search-active
   opacity: 0
 
 .form__active
@@ -154,274 +127,228 @@ input::-webkit-search-results-decoration
   width: 22.1px
   height: 21.61px
 
-.header__search-btn--size
+.header__search-btn-size
   width: 29px
   height: 29px
 
 .header__search-input
   margin-right: 24px
 
-.header__menu
-  .nav-item
-    margin-right: 46px
-    font-weight: 600
-    font-size: 1.125rem
-    line-height: 25px
+.header__bottom
+  padding: 18.66px 160px 18.66px 153px
+  justify-content: space-between
+  background-color: $menuBottom
+  &-list
+    margin-right: 40px
+    max-width: 1055px
+    width: 100%
+    justify-content: space-between
 
-.header__menu
-  .nav-link
-    padding-left: 6px
-    padding-right: 6px
-
-.header__menu
-  .nav-link:hover
-    color: $menuHover
-
-.header__menu
-  .nav-link:active
-    color: $menuClick
-
-.header__menu
-  .nav-link:focus,
-  .header__link-active
-    background-color: $accordionBorder
-    padding-left: 6px
-    padding-right: 6px
-    font-weight: 600
-    font-size: 1.125rem
-    line-height: 25px
-    color: #fff
-
-.header__menuBottom
-  background-color: $menuBottom !important
-
-.header__dropdown
-  width: 300px
-  height: 300px
-  margin-top: 22px !important
-  padding: 40px
-  border-radius: 0
-
-.header__dropdown-color
-  background-color: $menuBottom !important
-
-.header__dropdown__li
-  height: 40px
-
-.header__dropdown__li:not(:nth-last-of-type(1))
-  margin-bottom: 20px
-
-// Реализм
-.header__dropdown__li-tintoretto
-  background-image: url('@/image/header/realism/tintoretto.png')
-
-.header__dropdown__li-fridrih
-  background-image: url('@/image/header/realism/fridrih.png')
-
-.header__dropdown__li-leonardo
-  background-image: url('@/image/header/realism/leonardo.png')
-
-.header__dropdown__li-verroku
-  background-image: url('@/image/header/realism/verroku.png')
-
-// Импрессионизм
-.header__dropdown__li-mone
-  background-image: url('@/image/header/impressionism/mone.png')
-
-.header__dropdown__li-sisley
-  background-image: url('@/image/header/impressionism/sisley.png')
-
-.header__dropdown__li-mane
-  background-image: url('@/image/header/impressionism/mane.png')
-
-.header__dropdown__li-renuar
-  background-image: url('@/image/header/impressionism/renuar.png')
-
-// Постимпрессионизм
-.header__dropdown__li-vangog
-  background-image: url('@/image/header/post-impressionism/van-gog.png')
-
-.header__dropdown__li-sezan
-  background-image: url('@/image/header/post-impressionism/sezan.png')
-
-.header__dropdown__li-gogen
-  background-image: url('@/image/header/post-impressionism/gogen.png')
-
-.header__dropdown__li-siora
-  background-image: url('@/image/header/post-impressionism/siora.png')
-
-// Авангард
-.header__dropdown__li-kandinskiy
-  background-image: url('@/image/header/avant-garde/kandinskiy.png')
-
-.header__dropdown__li-marinetti
-  background-image: url('@/image/header/avant-garde/marinetti.png')
-
-.header__dropdown__li-malevich
-  background-image: url('@/image/header/avant-garde/malevich.png')
-
-.header__dropdown__li-picasso
-  background-image: url('@/image/header/avant-garde/picasso.png')
-
-// Футуризм
-.header__dropdown__li-karra
-  background-image: url('@/image/header/futurism/karra.png')
-
-.header__dropdown__li-pratella
-  background-image: url('@/image/header/futurism/pratella.png')
-
-.header__dropdown__li-severinni
-  background-image: url('@/image/header/futurism/severinni.png')
-
-.header__dropdown__li-balla
-  background-image: url('@/image/header/futurism/balla.png')
-
-.header__dropdown__li
-  .dropdown-item
-    display: flex
-    align-items: center
-    height: 100%
-    padding: 0
-    padding-left: 14px
-    font-weight: 600
-    font-size: .875rem
-    line-height: 19px
-    color: #fff
-
-.header__dropdown__li
-  .dropdown-item:hover
-    background-color: transparent
-    outline: 2px solid $accordionCircle
-
-.header__dropdown__li
-  .dropdown-item:active
-    background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4))
-
-.header a
-  color: #fff
-
-.header__logIn
-  display: flex
-  justify-content: flex-end
+.header__tab
   position: relative
-  padding-top: 8px
-  padding-bottom: 8px
-  .header__link
-    padding-bottom: 4px
-    padding-right: 6px
-    font-weight: 600
-    font-size: 1.125rem
-    line-height: 25px
-    color: #fff
-  .header__link::before
-    content: ""
-    position: absolute
-    background-color: #fff
-    -webkit-mask-image: url('@/image/header/login.svg')
-    mask-image: url('@/image/header/login.svg')
-    mask-repeat: no-repeat
-    top: 15px
-    bottom: 0
-    left: 44px
-    right: 0
-    text-align: rigth
-  .header__link:focus
-    background-color: $accordionBorder
-    padding-bottom: 4px
-    padding-left: 26px
-    padding-right: 6px
-    font-weight: 600
-    font-size: 1.125rem
-    line-height: 25px
-    color: #fff
+  &:not(:last-child)
+    margin-right: 20px
 
-.header__logIn
-  .header__link:hover
-    color: $menuHover
-  .header__link:hover::before
-    background-color: $menuHover
-    -webkit-mask-image: url('@/image/header/login.svg')
-    mask-image: url('@/image/header/login.svg')
+.header__btn-tab
+  padding: 6px 28px 6px 6px
+  color: $white
+  background-image: url("@/image/header/header-arrow.svg")
+  background-position: right 14px top 15px
+  background-size: 12px
+  background-repeat: no-repeat
+  transition-property: background, color
+  transition-duration: .2s
+  transition-timing-function: ease-in-out
+  &:focus-visible:not(:hover):not(.header__btn-tab.active-btn)
+    background-color: $colorDarkPurple
+    outline: none
+  &:hover
+    background-image: url("@/image/header/header-arrow-hover.svg")
+    color: $colorPurpleDefault
+    outline: none
+  &.active-btn
+    background-image: url("@/image/header/header-arrow-active.svg")
+    color: $colorDarkPurple
+    outline: none
 
-.header__logIn
-  .header__link:active
-    color: $menuClick
-  .header__link:active::before
-    background-color: $menuClick
-    -webkit-mask-image: url('@/image/header/login.svg')
-    mask-image: url('@/image/header/login.svg')
+.header__tab-wrap
+  position: absolute
+  top: 51px
+  left: 0
+  width: 300px
+  max-height: 300px
+  padding: 40px
+  background-color: $menuBottom
+  opacity: 0
+  visibility: hidden
+  transform: scale(0.8) translate(-50px, -20px)
+  transition-property: opacity, visibility, transform
+  transition-duration: .2s
+  transition-timing-function: ease-in-out
+  z-index: 2
 
-.header__menuBottom
-  padding-top: 23px
-  padding-bottom: 23px
-  .nav-link:first-child
-    padding-left: 0
+.active-dropdown
+  opacity: 1
+  visibility: visible
+  transform: none
 
-.header__menu2
-  .nav-item:not(:nth-last-of-type(1))
-    margin-right: 80px
+.header__tab-list
+  max-height: 220px
+  width: 240px
+  padding-right: 20px
+  overflow: hidden scroll
 
-.header__menu2
-  .nav-item
-    padding-left: 6px
-    padding-right: 6px
-    font-weight: 400
-    font-size: 1.125rem
-    line-height: 25px
+.simplebar-content:focus-visible,
+.simplebar-wrapper:focus-visible,
+.simplebar-placeholder:focus-visible,
+.simplebar-mask:focus-visible,
+.simplebar-offset:focus-visible,
+.simplebar-content-wrapper:focus-visible
+  outline: none
 
-.header__menu2
-  .nav-link:focus
-    padding-left: 6px
-    padding-right: 6px
-    background-color: $accordionBorder
-    color: #fff
+.header__tab-item
+  position: relative
+  height: 40px
+  padding: 10px 14px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  color: $white
+  transition: box-shadow .3s ease-in-out
+  &:not(:last-child)
+    margin-bottom: 20px
 
-.header__menu2
-  .nav-link:hover
-    color: $menuHover !important
+.header__tab-1-1
+  background-image: url("@/image/header/realism/tintoretto.png")
 
-.header__menu2
-  .nav-link:active
-    color: $menuClick !important
+.header__tab-1-2
+  background-image: url("@/image/header/realism/fridrih.png")
+
+.header__tab-1-3
+  background-image: url("@/image/header/realism/leonardo.png")
+
+.header__tab-1-4
+  background-image: url("@/image/header/realism/verroku.png")
+
+.header__tab-2-1
+  background-image: url("@/image/header/impressionism/mone.png")
+
+.header__tab-2-2
+  background-image: url("@/image/header/impressionism/sisley.png")
+
+.header__tab-2-3
+  background-image: url("@/image/header/impressionism/mane.png")
+
+.header__tab-2-4
+  background-image: url("@/image/header/impressionism/renuar.png")
+
+.header__tab-3-1
+  background-image: url("@/image/header/post-impressionism/van-gog.png")
+
+.header__tab-3-2
+  background-image: url("@/image/header/post-impressionism/sezan.png")
+
+.header__tab-3-3
+  background-image: url("@/image/header/post-impressionism/gogen.png")
+
+.header__tab-3-4
+  background-image: url("@/image/header/post-impressionism/siora.png")
+
+.header__tab-4-1
+  background-image: url("@/image/header/avant-garde/kandinskiy.png")
+
+.header__tab-4-2
+  background-image: url("@/image/header/avant-garde/marinetti.png")
+
+.header__tab-4-3
+  background-image: url("@/image/header/avant-garde/malevich.png")
+
+.header__tab-4-4
+  background-image: url("@/image/header/avant-garde/picasso.png")
+
+.header__tab-5-1
+  background-image: url("@/image/header/futurism/karra.png")
+
+.header__tab-5-2
+  background-image: url("@/image/header/futurism/pratella.png")
+
+.header__tab-5-3
+  background-image: url("@/image/header/futurism/severinni.png")
+
+.header__tab-5-4
+  background-image: url("@/image/header/futurism/balla.png")
+
+.header__tab-link::after
+  content: ''
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  transition-property: box-shadow, background
+  transition-timing-function: ease-in-out
+  transition-duration: .3s
+
+.header__tab-link-text
+  position: relative
+  z-index: 10
+
+.header__tab-link:focus-visible:not(:active)::after,
+.header__tab-link:hover::after
+  -webkit-box-shadow: inset 2px 2px $colorPurpleDefault, inset -2px -2px $colorPurpleDefault
+  -moz-box-shadow: inset 2px 2px $colorPurpleDefault, inset -2px -2px $colorPurpleDefault
+  box-shadow: inset 2px 2px $colorPurpleDefault, inset -2px -2px $colorPurpleDefault
+
+.header__tab-link:active::after
+  background-color: $menuActive
+  -webkit-box-shadow: inset 2px 2px $colorPurpleDefault, inset -2px -2px $colorPurpleDefault
+  -moz-box-shadow: inset 2px 2px $colorPurpleDefault, inset -2px -2px $colorPurpleDefault
+  box-shadow: inset 2px 2px $colorPurpleDefault, inset -2px -2px $colorPurpleDefault
+
+.simplebar .simplebar-track.simplebar-vertical
+  width: 2px
+  background-color: $black
+
+.simplebar .simplebar-scrollbar
+  width: 2px
+  background-color: $white
+
+.header__form
+  align-items: center
+  &-btn:focus
+    outline: none
+  &-btn svg
+    width: 100%
+    height: 100%
 
 .header__search
-  display: flex
-  justify-content: flex-end
-  align-self: center
-
-.header__btnSearch
-  width: 22px
-  height: 22px
-  margin-top: 8px
-  margin-right: 9px
-  border: none
-  background-color: transparent
-  background-image: url('@/image/header/search.svg')
-  background-repeat: no-repeat
-  background-position: 0 0
-  background-size: contain
-
-.header__inputSearch
+  position: relative
   width: 218px
+  background: none
   border: none
-  border-bottom: 1px solid rgba(255, 255, 255, .85)
-  background-color: transparent
-  font-size: 1.125rem
-  color: rgba(255, 255, 255, .85)
+  caret-color: $white
+  color: $white
+  border-bottom: 1px solid $search
+  &::placeholder
+    color: $search
 
-.header__inputSearch:focus,
-.header__inputSearch:hover
-  border-bottom: 1px solid $menuHover
+.header__search:focus,
+.header__search:hover
+  outline: none
+  background: none
+  border-color: $menuHover
 
-.header__inputSearch:active
-  border-bottom: 1px solid $menuClick
+.header__search:checked
+  outline: none
+  background: none
+  border-color: $colorDarkPurple
+
+.header__search:active
+  outline: none
 
 @media (max-width: 1420px)
-  .header__menuTop
-    position: relative
-
-  .header__blockBurger
-    display: block
+  .header__top
+    padding: 29px 50px 29px 50px
 
   .header__burger
     display: block
@@ -433,28 +360,56 @@ input::-webkit-search-results-decoration
     flex-direction: column
     justify-content: space-between
     align-items: flex-start
+    &.is-active-burger
+      transform: none
 
-  .header__menu-mobile.is-active-burger
-    transform: none
+  .header__logo
+    width: 187.6px
+    height: 42px
+    margin-right: auto
 
-  .header__menu,
-  .header__logIn
+  .header__nav
     display: none
 
-  .header__search-mobile--open
+  .header__button-visible
+    display: none
+
+  .header__search-mobile-open
     display: block
 
-  .header__menuBottom
+  .header__bottom
     display: none
 
+@media (max-width: 1008px)
+  .header__search-mobile-open
+    width: 27px
+    height: 27px
+    & svg
+      width: 100%
+      height: 100%
+
+  .header__search-wrap
+    width: 100%
+    height: 100px
+    top: 0
+    left: 0
+    right: 0
+    padding: 34px 50px 37px 54px
+    background-color: $black
+
+  .header__form-mobile
+    width: 100%
+
+  .header__search-input
+    width: 100%
+
 @media (max-width: 687px)
-  .header__menuTop
-    padding-top: 12px
-    padding-bottom: 12px
+  .header__top
+    padding: 12px 15px
 
   .header__burger svg
-    width: 25px
-    height: 18px
+    width: 100%
+    height: 100%
 
   .header__burger
     width: 25px
@@ -463,59 +418,56 @@ input::-webkit-search-results-decoration
   .header__menu-mobile
     height: 100vh
 
-  .header__burger--close
+  .header__burger-close
     margin-bottom: 16px
     width: 15px
     height: 15px
+    & svg
+      width: 100%
+      height: 100%
 
-  .header__burger--close svg
-    width: 100%
-    height: 100%
-
-  .header__logo
-    width: 96.8px
-    height: 21.67px
-    margin-left: 70px
-    margin-right: 70px
-
-  .header__img
-    width: 96.8px
-    height: 21.67px
+  .header__link-mobile
+    font-size: 16px
+    line-height: 32px
 
   .header__menu-button
     width: 115px
     height: 40px
     font-size: 16px
 
-  .header__search-mobile--open
-    width: 18px
-    height: 18px
+  .header__logo
+    width: 96.8px
+    height: 21.67px
 
-  .header__search-mobile--open svg
+  .header__search-mobile-open
     width: 18px
     height: 18px
 
   .header__search-wrap
-    width: 100%
     height: 75px
-    padding: 12 auto
-    top: 0
-    right: 0
-    background-color: rgba(0, 0, 0, 0.9)
-    justify-content: center
-    align-content: center
+    padding: 40px 64px 19px 57px
+    background-color: $menuBurgerBg
 
-  .header__search-btn--size svg
+  .header__search-btn-size svg
     width: 100%
     height: 100%
 
-  .header__search-btn--size
+  .header__search-btn-size
     width: 16px
     height: 16px
+
+  .header__form-mobile
+    align-items: flex-end
 
   .header__form-btn
     margin-right: 3px
 
+  .header__search-mobile-close
+    position: absolute
+    top: 15px
+    right: 15px
+    width: 15px
+    height: 15px
+
   .header__search-input
-    height: 20px
-    margin-right: 10px
+    margin-right: 0

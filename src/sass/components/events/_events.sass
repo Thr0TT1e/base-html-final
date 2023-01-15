@@ -1,53 +1,235 @@
+.events__container
+  position: relative
+  padding-bottom: 80px
+
+.events__title
+  margin-bottom: 16px
+
+.events__swiper-container
+  max-width: 1600px
+  overflow: hidden
+
+.events__card
+  max-width: 500px
+  min-height: 700px
 
 .events__swiper-button-prev,
 .events__swiper-button-next
-    position: absolute
-    width: 50px
-    height: 50px
+  position: absolute
+  width: 50px
+  height: 50px
 
 .events__swiper-button-prev
-    top: 43%
-    left: -15px
+  left: 135px
 
 .events__swiper-button-next
-    top: 43%
-    right: -15px
+  right: 135px
 
 .events__swiper-button-prev svg,
 .events__swiper-button-next svg
-    width: 100%
-    height: 100%
+  width: 100%
+  height: 100%
 
 .events__swiper-button-prev::after,
 .events__swiper-button-next::after
-    content: ''
+  content: ''
 
 .events__swiper-button-next.swiper-button-disabled,
 .events__swiper-button-prev.swiper-button-disabled
-    opacity: 0
+  opacity: 0
 
 .events__swiper-button-prev:focus-visible:not(:hover):not(:active),
 .events__swiper-button-next:focus-visible:not(:hover):not(:active)
-    outline: none
+  outline: none
 
 .events__swiper-button-prev:focus-visible:not(:hover):not(:active) svg .events__svg-focus,
 .events__swiper-button-next:focus-visible:not(:hover):not(:active) svg .events__svg-focus
-    outline: none
-    stroke: $accordionCircle
+  outline: none
+  stroke: $colorPurpleDefault
 
 .events__swiper-button-prev:hover svg path,
 .events__swiper-button-next:hover svg path,
 .events__swiper-button-prev:active svg path,
 .events__swiper-button-next:active svg path
-    fill: $accordionCircleBg
+  fill: $colorLightPurple
 
 .events__swiper-button-prev:hover:not(:active) svg .events__svg-focus,
 .events__swiper-button-next:hover:not(:active) svg .events__svg-focus
-    stroke: $accordionCircleBg
+  stroke: $colorLightPurple
 
 .events__swiper-button-prev:active svg .events__svg-focus,
 .events__swiper-button-next:active svg .events__svg-focus
-    stroke: $accordionCircle
+  stroke: $colorPurpleDefault
 
-    .events__swiper-pagination
-        display: none
+.events__swiper-pagination
+  display: none
+
+.events__card-top
+  width: 100%
+  height: 300px
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  &-1
+    background-image: url("@/image/events/1_1920.png")
+  &-2
+    background-image: url("@/image/events/2_1920.png")
+  &-3
+    background-image: url("@/image/events/3_1920.png")
+  &-4
+    background-image: url("@/image/events/4_1920.png")
+  &-5
+    background-image: url("@/image/events/5_1920.png")
+
+.events__card-bottom
+  padding: 15px 50px 39px 50px
+  margin-bottom: auto
+  min-height: 345px
+  flex-direction: column
+  justify-content: space-between
+  font-weight: 600
+  border: 1px solid $accordionGrey
+  border-top: none
+
+.events__card-info
+  margin-bottom: 11px
+  justify-content: flex-start
+  font-size: 12px
+  line-height: 16.34px
+  color: $dateFoto
+
+.events__card-title
+  margin-bottom: 7px
+  font-size: 23px
+  line-height: 32.68px
+  color: $colorDarkGray
+
+.events__card-descr
+  font-weight: 400
+  font-size: 16px
+  line-height: 32px
+  color: $colorDarkGray
+
+.events__card-link
+  display: block
+  width: 92px
+  font-weight: 400
+  font-size: 16px
+  line-height: 32px
+  border-bottom: 1px solid $colorPurpleDefault
+  color: $colorPurpleDefault
+  &:focus-visible
+    color: $white
+    border-bottom-color: $white
+  &:hover
+    color: $colorDarkPurple
+    border-bottom-color: $colorDarkPurple
+  &:active
+    color: $colorDarkGray
+    border-bottom-color: $colorDarkGray
+
+@media (max-width: 1760px)
+  .events__card-top
+    height: 200px
+
+  .events__card-bottom
+    padding: 14px 31px 49px 34px
+    min-height: 418px
+
+  .events__card-info
+    justify-content: flex-end
+    text-align: end
+    margin-bottom: 4px
+
+@media (max-width: 1420px)
+  .events__container
+    padding-top: 0
+
+  .events__card
+    min-height: 683px
+    &-top-1
+      background-image: url("@/image/events/1_1024.png")
+    &-top-2
+      background-image: url("@/image/events/2_1024.png")
+    &-top-3
+      background-image: url("@/image/events/3_1024.png")
+    &-top-4
+      background-image: url("@/image/events/4_1024.png")
+    &-top-5
+      background-image: url("@/image/events/5_1024.png")
+
+  .events__swiper-wrapper
+    margin-bottom: 17px
+
+  .events__swiper-button-next,
+  .events__swiper-button-prev
+    display: none
+
+  .events__swiper-pagination
+    display: flex
+    justify-content: center
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 7.5px
+    &
+      width: 10px
+      height: 10px
+
+  .swiper-pagination-bullet-active
+    background: $btnGallery
+
+@media (max-width: 1008px)
+  .events__title
+    margin-bottom: 15px
+
+  .events__card-top-1
+    background-image: url("@/image/events/1_768.png")
+
+  .events__card-top-2
+    background-image: url("@/image/events/2_768.png")
+
+  .events__card-top-3
+    background-image: url("@/image/events/3_768.png")
+
+  .events__card-top-4
+    background-image: url("@/image/events/4_768.png")
+
+  .events__card-top-5
+    background-image: url("@/image/events/5_768.png")
+
+  .events__card-bottom
+    padding: 14px 17px 49px 34px
+
+  .events__card-link
+    line-height: 21px
+
+  .events__swiper-wrapper
+    margin-bottom: 30px
+
+@media (max-width: 687px)
+  .events__container
+    padding-top: 0
+
+  .events__title
+    margin-bottom: 12.5px
+
+  .events__card
+    max-width: unset
+    &-top-1
+      background-image: url("@/image/events/1_320.png")
+    &-top-2
+      background-image: url("@/image/events/2_320.png")
+    &-top-3
+      background-image: url("@/image/events/3_320.png")
+    &-top-4
+      background-image: url("@/image/events/4_320.png")
+    &-top-5
+      background-image: url("@/image/events/5_320.png")
+    &-bottom
+      padding: 17px 16px 47px 22px
+    &-info
+      margin-bottom: 9px
+
+  .events__swiper-wrapper
+    margin-bottom: 19px

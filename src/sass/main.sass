@@ -1,20 +1,53 @@
-@import "union"
+@import "./_vars"
+
+html
+  box-sizing: border-box
+  scroll-behavior: smooth
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: inherit
 
 body
-  position: relative
+  margin: 0 auto
+  max-width: 1920px
   font-family: $openSans
-  font-size: $fontsize
+  font-size: $fontSize
+  background-color: $white
 
-// *,
-// *::before,
-// *::after
-//   margin: 0
-//   padding: 0
-//   box-sizing: inherit
+img
+  width: 100%
 
-.container-fluid
-  padding-left: 160px
-  padding-right: 160px
+a
+  color: inherit
+  text-decoration: none
+  transition: color 0.2s ease-in-out
+
+a:focus
+  outline: none
+
+svg path
+  transition: all .3s ease-in-out
+
+.container
+  margin: 0 auto
+  padding: 0 160px
+  max-width: 1920px
+
+.flex
+  display: flex
+
+.btn-reset
+  padding: 0
+  border: none
+  background: transparent
+  position: relative
+  cursor: pointer
+  transition-property: background-color, box-shadow
+  transition: .2s ease-in-out
 
 .list-reset
   margin: 0
@@ -27,15 +60,72 @@ body
   transition-property: background-color, border, border-color, color
   transition: .2s ease-in-out
 
-.flex
-  display: flex
+.header-bg-focus,
+.bg-focus
+  z-index: 3
+
+.header-bg-focus:before,
+.bg-focus:before
+  content: ""
+  position: absolute
+  top: -6px
+  bottom: -6px
+  left: -6px
+  right: -6px
+  background-color: $colorDarkPurple
+  z-index: -1
+  opacity: 0
+  transition: opacity .4s ease-in-out
+
+.bg-focus:before
+  background-color: $colorPurpleDefault
+
+.header-bg-focus:focus-visible
+  outline: none
+
+.header-bg-focus:focus-visible:not(:hover):before,
+.bg-focus:focus-visible:not(:hover):before,
+.outline-focus:focus-visible:not(:hover):before
+  opacity: 1
+
+.title
+  margin-bottom: 17px
+  font-weight: 400
+  font-size: 48px
+  line-height: 65.37px
+  color: $colorDarkGray
+
+.section-descr
+  max-width: 1078px
+  font-weight: 400
+  font-size: 16px
+  line-height: 32px
+  color: $colorDarkGray
 
 @media (max-width: 1420px)
-  .container-fluid
-    padding-left: 50px
-    padding-right: 50px
+  .container
+    padding: 0 50px
+    padding-top: 80px
+    padding-bottom: 80px
+
+  .section-descr
+    max-width: unset
+    width: 100%
 
 @media (max-width: 687px)
-  .container-fluid
+  .container
     padding-left: 14px
     padding-right: 16px
+    padding-top: 50px
+    padding-bottom: 50px
+
+  .title
+    margin-bottom: 12px
+    font-size: 28px
+    line-height: 38.13px
+
+  .section-descr
+    font-size: 14px
+    line-height: 28px
+
+@import "union"

@@ -1,6 +1,6 @@
 {
   "name": "base-html-final",
-  "description": "Дипломный проект по базовому HTML",
+  "description": "Дипломный проект по базовому HTML (Blanchard)",
   "author": {
     "name": "Thr0TT1e",
     "email": "info@noble24.pro"
@@ -11,7 +11,7 @@
     "url": "https://codeberg.org/Thr0TT1e/base-html-final"
   },
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,9 +24,14 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.3",
     "choices.js": "^10.2.0",
+    "inputmask": "^5.0.7",
+    "jquery": "^3.6.3",
+    "jquery-ui": "^1.13.2",
+    "jsdom": "^21.0.0",
+    "just-validate": "^4.0.2",
+    "normalize.css": "^8.0.1",
+    "simplebar": "^5.3.9",
     "swiper": "^8.4.5",
     "ymaps": "^0.2.1"
   }
