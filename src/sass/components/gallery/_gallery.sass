@@ -76,6 +76,7 @@
 .is-focused .choices__inner,
 .is-open .choices__inner
   border-color: $white
+  box-sizing: border-box
 
 .choices__list--dropdown .choices__placeholder
   display: none
@@ -100,6 +101,7 @@
   font-weight: 400
   font-size: 16px
   color: $dateFoto
+  box-sizing: border-box
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted,
 .choices__list[aria-expanded] .choices__item--selectable.is-highlighted
@@ -129,6 +131,7 @@
     margin-right: 12px
     width: 12px
     height: 12px
+    box-sizing: border-box
     border: 1px solid $white
     background-position: top 2.7px left 3px
     background-repeat: no-repeat
@@ -188,7 +191,7 @@
     justify-content: center
     background-color: $menuBottom
     opacity: 0
-    transition: all .2s linear
+    transition: opacity .2s linear
   &::before
     content: ''
     position: absolute
@@ -198,7 +201,7 @@
     height: 100%
     box-shadow: inset 25px 25px $menuActive, inset -25px -25px $menuActive
     opacity: 0
-    transition: all .2s linear
+    transition: opacity .2s linear
   &:focus::before
     box-shadow: inset 3px 3px $colorDarkPurple, inset -3px -3px $colorDarkPurple
     opacity: 1

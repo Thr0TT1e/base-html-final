@@ -4,16 +4,9 @@ html
   box-sizing: border-box
   scroll-behavior: smooth
 
-*,
-*::before,
-*::after
-  margin: 0
-  padding: 0
-  box-sizing: inherit
-
 body
   margin: 0 auto
-  max-width: 1920px
+  min-width: 320px
   font-family: $openSans
   font-size: $fontSize
   background-color: $white
@@ -30,14 +23,14 @@ a:focus
   outline: none
 
 svg path
-  transition: all .3s ease-in-out
+  transition: fill .3s ease-in-out
 
 .container
   margin: 0 auto
   padding: 0 160px
   max-width: 1920px
 
-.flex
+.custom-f
   display: flex
 
 .btn-reset

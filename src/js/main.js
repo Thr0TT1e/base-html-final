@@ -4,8 +4,6 @@ import 'choices.js/public/assets/styles/choices.min.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import ymaps from 'ymaps';
-import 'simplebar';
-import 'simplebar/dist/simplebar.css';
 import Inputmask from 'inputmask';
 import JustValidate from 'just-validate';
 import '../sass/main.sass';

@@ -47,12 +47,12 @@
   width: 100%
   height: 100%
   margin-top: -1px
-  transition: all 0.2s ease-in-out
+  transition: border-color .2s ease-in-out
   cursor: pointer
   &-top
     border-top: 1px solid #cacaca
     border-bottom: 1px solid #cacaca
-    transition: all 0.2s ease-in-out
+    transition: border-color .2s ease-in-out, color .2s ease-in-out
   &:hover
     position: relative
     border-color: $colorPurpleDefault
@@ -68,7 +68,7 @@
     font-weight: 600
     font-size: 24px
     line-height: 32px
-    transition: all .2s ease-in-out
+    transition: color .2s ease-in-out
 
 .catalog__item-top:focus-within,
 .catalog__item-top:focus-within .catalog__item-button
